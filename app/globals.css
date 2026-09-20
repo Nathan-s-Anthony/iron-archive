@@ -30,6 +30,7 @@
 @layer base {
     html {
     font-size: var(--base-font-size);
+    scroll-behavior: smooth;
   }
   body {
   background: var(--background);
@@ -40,21 +41,69 @@
 h1 {
  font-family: var(--font-sans);
  font-size: var(--text-8xl);
- font-weight: 700;
- line-height: 1.2;
- @apply mt-4 mb-4
+line-height: 1;
+font-weight: 400;
+ letter-spacing: -6.6px;
 }
+span{
+  font-family: var(--font-mono) ;
+}
+button{
+ @apply cursor-pointer duration-300 transition-all text-sm rounded-sm px-8 py-4;
+}
+button.primary{
+@apply bg-secondary font-bold border border-secondary hover:bg-secondary/80 text-background ;
+}
+button.secondary{
+@apply bg-none text-primary ;
+}
+
 p{
   font-family: var(--font-mono);
   font-size: var(--text-lg);
   line-height: 1.5;
   @apply mt-4 mb-4;
 }
+
 a{
   font-size: var(--text-lg);
   font-family: var(--font-mono);
 }
+select option  {
+  @apply bg-background ;
+}
+@keyframes header-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+    100% {
+        opacity: 1;
+        transform:translateX(0);
+    }
+}
 
+.animate-header-reveal {
+    transform-origin: top bottom;
+    animation: header-reveal 0.3s ease-in-out forwards;
+}
+
+@keyframes header-hide {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.animate-header-hide {
+    transform-origin: bottom top;
+    animation: header-hide 0.2s ease-in forwards;
+}
 }
 @utility container{
   @apply 2xl:py-6 2xl:px-4  lg:py-4 lg:px-2  px-4 py-6 mx-auto;

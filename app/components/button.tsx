@@ -1,7 +1,7 @@
 "use client";
 
-export default function Button({ value, variant }: { value: string, variant: "primary" | "secondary" }) {
+export default function Button({ value, variant, className }: { value: string, variant: "primary" | "secondary", className: string }) {
     return (
-        <button className={`${variant} font-mono uppercase  text-primary border-primary border px-4 py-4`}>{value}</button>
+        <button className={` ${className} ${variant} font-mono uppercase  `}>{value}</button>
     )
 }
