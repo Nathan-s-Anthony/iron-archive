@@ -11,14 +11,15 @@ export default function Header() {
     const navList = [
         {
             id: 0,
-            name: "Collections",
-            link: "collections"
-        },
-        {
-            id: 1,
             name: "Nations",
             link: "nations",
         },
+        {
+            id: 1,
+            name: "Collections",
+            link: "collections"
+        },
+
         {
             id: 2,
             name: "Battles",

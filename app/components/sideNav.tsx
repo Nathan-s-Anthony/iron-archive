@@ -6,13 +6,13 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
     const navList = [
         {
             id: 0,
-            name: "Collections",
-            link: "collections"
+            name: "Nations",
+            link: "nations",
         },
         {
             id: 1,
-            name: "Nations",
-            link: "nations",
+            name: "Collections",
+            link: "collections"
         },
         {
             id: 2,
@@ -36,8 +36,8 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
             <ul className="w-full flex flex-col gap-2">
                 {navList.map((item) => {
                     return (
-                        <li key={item.id} className="group">
-                            <Link href={`#${item.link}`} className="z-10 duration-300 transition-all group-hover:translate-x-25 ">
+                        <li key={item.id} className="group ">
+                            <Link href={`#${item.link}`} className=" duration-300 transition-all  group-hover:translate-x-1">
                                 <div className="flex w-full justify-between items-center gap-6">
                                     <span className="text-primary ">{item.name}</span>
                                     <div className="bg-primary flex items-center justify-center relative w-8 h-8 rounded-full">
