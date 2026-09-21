@@ -9,13 +9,10 @@ export default function PageContent() {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
-                    setInView(true);
-                    observer.disconnect();
-                }
+                setInView(entry.isIntersecting);
             },
             {
-                threshold: 0.2,
+                threshold: 1,
             }
         );
 
@@ -26,14 +23,14 @@ export default function PageContent() {
         return () => observer.disconnect();
     }, []);
     return (
-        <div className="h-150 block w-full flex items-center" ref={containerRef}>
+        <div className="h-150 block w-full flex items-center" >
             <div className="container">
-                <div className={` ${inView ? "animate-slide-in-left" : ""} block flex justify-between items-center`}>
-                    <div>
+                <div ref={containerRef} className={` block flex justify-between items-center`} >
+                    <div className={`${inView ? "animate-slide-in-left" : ""}`}>
                         <span className="text-secondary">THE COLLECTION</span>
                         <h2 className="t-3  font-display text-5xl leading-[.96] tracking-[-.045em] text-[#f3ecdf] lg:text-7xl">Study the objects.<br />Read the <span className="font-sans italic text-quaternary">stories within</span></h2>
                     </div>
-                    <div className="flex justify-start flex-grow">
+                    <div className={`${inView ? "animate-slide-in-right" : ""} flex justify-start flex-grow`}>
                         <p className="text-primary/60 ">Filter across theaters, technologies, and factions. Each entry is a starting point for deeper research.</p>
                     </div>
                 </div>
