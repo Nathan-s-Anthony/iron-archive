@@ -14,6 +14,8 @@
   --color-background: var(--background);
   --color-primary:var(--primary);
   --color-secondary:var(--secondary);
+  --color-tertiary:var(--tertiary);
+  --color-quaternary:var(--quaternary);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-fraunces-sans);
   --font-mono: var(--font-manrope-mono);
@@ -31,6 +33,7 @@
     html {
     font-size: var(--base-font-size);
     scroll-behavior: smooth;
+    font-family: var(--font-sans) "Georgia Serif" ;
   }
   body {
   background: var(--background);
@@ -39,11 +42,15 @@
 }
 
 h1 {
- font-family: var(--font-sans);
+ font-family: var(--font-sans) "Georgia Serif";
  font-size: var(--text-8xl);
 line-height: 1;
 font-weight: 400;
  letter-spacing: -6.6px;
+}
+h2{
+  font-family: var(--font-sans);
+  font-size: var(--text-6xl);
 }
 span{
   font-family: var(--font-mono) ;
@@ -79,7 +86,7 @@ select option  {
     }
     100% {
         opacity: 1;
-        transform:translateX(0);
+        transform:translateY(0);
     }
 }
 
@@ -91,7 +98,7 @@ select option  {
 @keyframes header-hide {
     0% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 
     100% {
@@ -104,6 +111,56 @@ select option  {
     transform-origin: bottom top;
     animation: header-hide 0.2s ease-in forwards;
 }
+@keyframes sideNav-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+    100% {
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+
+.animate-side-nav-reveal {
+    transform-origin: top bottom;
+    animation: sideNav-reveal 0.3s ease-in-out forwards;
+}
+
+@keyframes sideNav-hide {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.animate-side-nav-hide {
+    transform-origin: bottom top;
+    animation: sideNav-hide 0.2s ease-in forwards;
+}
+
+@keyframes slide-in-left {
+    0% {
+        opacity: 1;
+        transform: translateX(-200px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-left {
+    transform-origin: left left;
+    animation: slide-in-left  0.2s ease-in forwards;
+}
+
 }
 @utility container{
   @apply 2xl:py-6 2xl:px-4  lg:py-4 lg:px-2  px-4 py-6 mx-auto;

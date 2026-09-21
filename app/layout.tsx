@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope, Fraunces, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
-import SideNav from "./components/sideNav";
 
 const frauncesSans = Fraunces({
   variable: "--font-fraunces-sans",
@@ -32,7 +31,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${frauncesSans.variable} ${manRopeMono.variable} ${dmMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Header />
-        <SideNav />
         {children}
       </body>
     </html>
