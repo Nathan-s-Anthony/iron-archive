@@ -53,7 +53,7 @@ export default function PageContent() {
                             </div>
                         </div>
                         <h3 className="p-8 text-primary mb-8 mt-8 text-5xl font-mono-alt ">Major Nations</h3>
-                        <div className="p-8 grid grid-cols-1 grid-rows-4 lg:grid-cols-2 gap-6 grid-rows-3 ">
+                        <div className="p-8 grid grid-cols-1 grid-rows-4 lg:grid-cols-2 gap-6 lg:grid-rows-3 ">
                             <div className=" h-100 relative">
                                 <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
                                 <Image src="/nationsFlags/usa.jpg" className="object-cover" alt="USA" fill />
@@ -80,10 +80,27 @@ export default function PageContent() {
                                 <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
                                 <Image src="/nationsFlags/germany.jpg" className="object-cover" alt="USA" fill />
                             </div>
-                            <h3 className=" text-primary mb-8 mt-8 text-5xl font-mono-alt ">Minor Nations</h3>
+                        </div>
+                        <h3 className="p-8 text-primary mb-8 mt-8 text-5xl font-mono-alt ">Minor Nations</h3>
+                        <div className="p-8 grid grid-cols-1 grid-rows-4 lg:grid-cols-2 gap-6 grid-rows-3 ">
+                            <div className=" h-100 relative">
+                                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
+                                <Image src="/nationsFlags/usa.jpg" className="object-cover" alt="USA" fill />
+                            </div>
+                            <div className=" h-100 relative">
+                                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
+
+                                <Image src="/nationsFlags/britian.jpg" className="object-cover" alt="USA" fill />
+                            </div>
+                            <div className=" h-100 relative">
+                                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
+
+                                <Image src="/nationsFlags/italy.jpg" className="object-cover" alt="USA" fill />
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     )

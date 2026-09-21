@@ -120,33 +120,33 @@ select option  {
 @keyframes sideNav-reveal {
     0% {
         opacity: 0;
-        transform: translateY(-10px)
+        transform: translateX(100px)
     }
     100% {
         opacity: 1;
-        transform:translateY(0);
+        transform:translateX(0);
     }
 }
 
 .animate-side-nav-reveal {
-    transform-origin: top bottom;
+    transform-origin: right right;
     animation: sideNav-reveal 0.3s ease-in-out forwards;
 }
 
 @keyframes sideNav-hide {
     0% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
     100% {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateX(100px);
     }
 }
 
 .animate-side-nav-hide {
-    transform-origin: bottom top;
+    transform-origin: left left;
     animation: sideNav-hide 0.2s ease-in forwards;
 }
 
