@@ -68,7 +68,7 @@ button.tertiary{
 @apply border border-primary/30 text-primary/60;
 }
 button.link{
-    @apply bg-none border-none text-primary/60 transition-all duration-300 hover:text-secondary ;
+@apply bg-none border-none text-primary/60 transition-all duration-300 hover:text-secondary ;
 }
 
 p{

@@ -42,9 +42,7 @@ export default function Hero() {
                 </div>
                 <div className="text-primary w-full flex  items-center  absolute bottom-40 left-0 z-20">
                     <div className="border-t border-primary/30 w-full">
-                        <div className="container">
-                            <h2>Explore all artifacts from different</h2>
-                        </div>
+
                     </div>
                     {/* <div className="container mb-auto">
                         <div className="flex flex-col justify-between h-full gap-6">

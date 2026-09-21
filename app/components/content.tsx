@@ -27,7 +27,7 @@ export default function PageContent() {
     return (
         <div className=" block w-full" >
             <div className="container">
-                <div ref={containerRef} className={` block flex justify-between items-center border-b border-primary/30 `} >
+                <div id="collections" ref={containerRef} className={` block flex justify-between items-center border-b border-primary/30 `} >
                     <div className={`py-4 flex gap-2 flex-col ${inView ? "animate-slide-in-left" : ""}`}>
                         <span className="text-secondary">THE COLLECTION</span>
                         <h2 className="t-3  font-display text-5xl leading-[.96] tracking-[-.045em] text-[#f3ecdf] lg:text-7xl ">Study the artifacts.<br />Read the <span className="font-sans italic text-quaternary">stories within</span></h2>
