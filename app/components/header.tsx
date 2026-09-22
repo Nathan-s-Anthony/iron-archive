@@ -12,30 +12,24 @@ export default function Header() {
         {
             id: 0,
             name: "Nations",
-            link: "nations",
+            link: "#nations",
         },
         {
             id: 1,
             name: "Collections",
-            link: "collections"
+            link: "#collections"
         },
 
         {
             id: 2,
-            name: "Campaigns",
-            link: "campaigns"
+            name: "Operations",
+            link: "#operations"
         },
         {
             id: 3,
             name: "Timelines",
-            link: "timelines",
+            link: "#timelines",
         },
-
-        {
-            id: 4,
-            name: "Maps",
-            link: "battle-maps",
-        }
     ]
     useEffect(() => {
         const handleScroll = () => {
@@ -55,7 +49,7 @@ export default function Header() {
                     <div className="grid grid-cols-3">
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center relative">
-                                <Link href="/" className="uppercase text-secondary  font-mono text-xl font-sans font-bold"> iron archive</Link>
+                                <Link href="/" className="uppercase text-secondary  text-xl font-sans font-bold"> iron archive</Link>
                             </div>
                             <div className="flex">
                                 <div className="block w-full ">
@@ -75,7 +69,7 @@ export default function Header() {
                             <ul className="flex justify-center gap-4 ">
                                 {navList.map((item) => {
                                     return (
-                                        <li key={item.id}><Link href={`#${item.link}`} className="uppercase text-primary">{item.name}</Link></li>
+                                        <li key={item.id}><Link href={`${item.link}`} className="uppercase text-primary">{item.name}</Link></li>
                                     )
                                 })}
                             </ul>

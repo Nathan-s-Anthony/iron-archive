@@ -42,15 +42,29 @@
 }
 
 h1 {
- font-family: var(--font-sans) "Georgia Serif";
+ font-family: var(--font-sans);
  font-size: var(--text-8xl);
 line-height: 1;
 font-weight: 400;
  letter-spacing: -6.6px;
 }
 h2{
+line-height: 1;
   font-family: var(--font-sans);
   font-size: var(--text-6xl);
+}
+h3{
+    line-height: 1;
+    font-family: var(--font-sans);
+    font-size: var(--text-8xl);
+    @apply text-primary;
+}
+h4{
+    line-height: 1;
+    font-family: var(--font-sans);
+    font-size: var(--text-4xl);
+    @apply text-primary;
+
 }
 span{
   font-family: var(--font-mono) ;
@@ -75,7 +89,7 @@ p{
   font-family: var(--font-mono);
   font-size: var(--text-lg);
   line-height: 1.5;
-  @apply mt-4 mb-4;
+  @apply mt-4 mb-4 text-primary/60;
 }
 
 a{
@@ -130,6 +144,7 @@ select option  {
 
 .animate-side-nav-reveal {
     transform-origin: right right;
+    display: block ;
     animation: sideNav-reveal 0.3s ease-in-out forwards;
 }
 
@@ -147,6 +162,7 @@ select option  {
 
 .animate-side-nav-hide {
     transform-origin: left left;
+       display: hidden ;
     animation: sideNav-hide 0.2s ease-in forwards;
 }
 

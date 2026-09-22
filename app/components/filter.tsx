@@ -12,7 +12,6 @@ export default function Filter() {
                         <Button value={"AIRCRAFTS"} variant={"tertiary"} className={""} />
                         <Button value={"ARMORED"} variant={"tertiary"} className={""} />
                         <Button value={"SHIPS"} variant={"tertiary"} className={"border-r border-primary/30"} />
-
                     </div>
                     <div className=" w-[1px] ml-4 text-center bg-primary/30 mr-4 block"></div>
                     <div className=" justify-start">
