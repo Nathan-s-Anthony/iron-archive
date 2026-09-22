@@ -22,8 +22,8 @@ export default function Header() {
 
         {
             id: 2,
-            name: "Battles",
-            link: "battle-map"
+            name: "Campaigns",
+            link: "campaigns"
         },
         {
             id: 3,
@@ -33,8 +33,8 @@ export default function Header() {
 
         {
             id: 4,
-            name: "about",
-            link: "about",
+            name: "Maps",
+            link: "battle-maps",
         }
     ]
     useEffect(() => {

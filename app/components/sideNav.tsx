@@ -19,23 +19,25 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
         {
             id: 1,
             name: "Collections",
-            link: "#collections",
+            link: "#collections"
         },
+
         {
             id: 2,
-            name: "Battles",
-            link: "#battle-map",
+            name: "Campaigns",
+            link: "#campaigns"
         },
         {
             id: 3,
             name: "Timelines",
             link: "#timelines",
         },
+
         {
             id: 4,
-            name: "About",
-            link: "#about",
-        },
+            name: "Maps",
+            link: "#battle-maps",
+        }
     ];
 
     return (
@@ -53,8 +55,9 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
                             className="block w-full border-b py-2"
                         >
                             <div className="flex justify-end gap-4 items-center ">
-                                <span className="text-primary text-end duration-300 transition-all group-hover:-translate-x-2 ">
+                                <span className="text-primary text-end duration-300  relative transition-all group-hover:-translate-x-2 ">
                                     {item.name}
+                                    <div className="block absolute h-5 w-10 bottom-0 right-0"></div>
                                 </span>
                                 <div className="bg-primary flex relative items-center justify-center relative  z-60 w-7 h-7 rounded-full">
                                     <div className={`${navList.length - 1 === item.id ? "" : "absolute w-[1px] h-8 bg-primary/30 block -bottom-6 z-10"} `}></div>
