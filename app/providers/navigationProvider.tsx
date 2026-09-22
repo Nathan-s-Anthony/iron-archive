@@ -32,20 +32,37 @@ export function NavigationEventsProvider({
         if (!sections.length) return;
 
         // Set initial active section from URL
-        const initialHash = window.location.hash.replace("#", "");
+        const initialHash =
+            window.location.hash.replace("#", "");
 
         if (initialHash) {
             setActiveSection(initialHash);
         }
 
         const updateActiveSection = () => {
-            const viewportMiddle = window.innerHeight * 0.35;
+            // If we're at the very top, reset navigation
+            if (window.scrollY <= 1) {
+                setActiveSection("");
 
-            let closestSection: HTMLElement | null = null;
+                window.history.replaceState(
+                    null,
+                    "",
+                    window.location.pathname +
+                    window.location.search
+                );
+
+                return;
+            }
+
+            const viewportMiddle =
+                window.innerHeight * 0.35;
+
+            let closestSection: HTMLElement | undefined;
             let closestDistance = Infinity;
 
             sections.forEach((section) => {
-                const rect = section.getBoundingClientRect();
+                const rect =
+                    section.getBoundingClientRect();
 
                 // Ignore sections completely outside viewport
                 if (
@@ -65,7 +82,7 @@ export function NavigationEventsProvider({
                 }
             });
 
-            if (closestSection?.id) {
+            if (closestSection && closestSection.id) {
                 setActiveSection(closestSection.id);
             }
         };
@@ -79,7 +96,8 @@ export function NavigationEventsProvider({
 
         // Handle anchor changes / browser back & forward
         const handleHashChange = () => {
-            const hash = window.location.hash.replace("#", "");
+            const hash =
+                window.location.hash.replace("#", "");
 
             if (hash) {
                 setActiveSection(hash);
@@ -105,14 +123,14 @@ export function NavigationEventsProvider({
             );
         };
     }, []);
+
+    // Keep browser URL in sync with active section
     useEffect(() => {
-        if (window.scrollY === 0) {
-            window.history.replaceState(null, "", window.location.pathname);
-            return;
-        }
         if (!activeSection) return;
+
         const currentHash =
             window.location.hash.replace("#", "");
+
         if (currentHash !== activeSection) {
             window.history.replaceState(
                 null,
@@ -120,8 +138,8 @@ export function NavigationEventsProvider({
                 `#${activeSection}`
             );
         }
-
     }, [activeSection]);
+
     return (
         <NavigationContext.Provider
             value={{

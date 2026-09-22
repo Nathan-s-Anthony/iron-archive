@@ -13,8 +13,8 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
 
         {
             id: 0,
-            name: "Collections",
-            link: "collections"
+            name: "Catalogue",
+            link: "catalogue"
         },
         {
             id: 1,
@@ -24,8 +24,8 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
 
         {
             id: 2,
-            name: "Operations",
-            link: "operations"
+            name: "Campaigns",
+            link: "campaigns"
         },
         {
             id: 3,

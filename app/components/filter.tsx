@@ -6,8 +6,8 @@ export default function Filter() {
     return (
         <div className="w-full ">
             <div className="container">
-                <div className="flex relative ">
-                    <div className=" gap-6 flex justify-between">
+                <div className="flex relative flex-wrap ">
+                    <div className=" gap-6 flex justify-between flex-wrap">
                         <Button value={"ALL ARTIFACTS"} variant={"tertiary"} className={""} />
                         <Button value={"AIRCRAFTS"} variant={"tertiary"} className={""} />
                         <Button value={"ARMORED"} variant={"tertiary"} className={""} />

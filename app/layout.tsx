@@ -3,6 +3,7 @@ import { Manrope, Fraunces, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import { NavigationEventsProvider } from "./providers/navigationProvider";
+import Footer from "./components/footer";
 
 const frauncesSans = Fraunces({
   variable: "--font-fraunces-sans",
@@ -31,10 +32,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${frauncesSans.variable} ${manRopeMono.variable} ${dmMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <NavigationEventsProvider>
-          <Header />
-        </NavigationEventsProvider>
         {children}
+        <Footer />
       </body>
     </html>
   );

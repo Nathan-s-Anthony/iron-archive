@@ -1,14 +1,17 @@
 "use client";
 import Image from "next/image";
 import Button from "./button";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 export default function FilterContent({ }) {
 
+    const router = useRouter();
     return (
 
         <div className="container">
-            <div className="grid grid-cols-2 grid-rows-2 gap-4 p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-4 px-4 lg:p-8">
                 {/* <Image className="col-span-1" alt="jet"src="https://images.unsplash.com/photo-1782034419865-535c50b9695a?auto=format&fit=crop&w=1200&q=85" /> */}
-                <div className="lg:w-full  lg:h-130  relative ">
+                <div className="lg:w-full  w-full lg:h-130  h-100   relative ">
                     <div className="absolute group w-fit h-fit py-2 px-4 left-5  font-sans top-5 text-sm inset-0 bg-background text-primary  rounded-md z-40 ">
                         <span title="aircraft" className="uppercase font-sans">Aircraft</span>
                     </div>
@@ -36,7 +39,8 @@ export default function FilterContent({ }) {
                     <Image alt="jet" className="object-cover" fill src="https://images.unsplash.com/photo-1782034419865-535c50b9695a?auto=format&fit=crop&w=1200&q=85" />
                 </div>
                 <div className="lg:w-full lg:h-130 relative flex items-center justify-center">
-                    <Button value="View the entire Collection" variant={"secondary"} className={""} />
+                    <Link href={"/collections"} className="text-secondary font-mono-alt">View Entire Collection</Link>
+                    {/* <Button value="View the entire Collection" onClick={() => router.push("/operations")} variant={"secondary"} className={""} /> */}
                     {/* <div className="absolute group w-fit h-fit py-2 px-4 left-5  font-sans top-5 text-sm inset-0 bg-background text-primary  rounded-md z-40 ">
                         <span title="aircraft" className="uppercase font-sans">Aircraft</span>
                     </div>
