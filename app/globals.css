@@ -251,6 +251,15 @@
       rgba(16, 23, 26, 0.55) 100%
     );
   }
+  .collection-overlay {
+    background: linear-gradient(
+      0deg,
+      rgba(16, 23, 26, 0.95) 0%,
+      rgba(16, 23, 26, 0.6) 37%,
+      rgba(16, 23, 26, 0.12) 72%,
+      rgba(16, 23, 26, 0.55) 100%
+    );
+  }
   .active-carousel-text {
     @apply text-secondary -translate-x-4 text-lg;
   }

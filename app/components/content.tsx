@@ -58,10 +58,10 @@ export default function PageContent() {
                 focused on and prirotize{" "}
               </p>
             </div>
-            <div className="lg:px-8 grid grid-cols-2 grid-rows-2 lg:grid-cols-3 gap-6 lg:grid-rows-2 ">
-              <div className=" h-60 lg:h-100 relative">
+            <div className="lg:px-8 grid grid-cols-2  lg:grid-cols-4 gap-6  ">
+              <div className=" group h-60 lg:h-100 relative">
                 <Pill title={"Allied"} />
-                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
+                <div className="absolute group-hover:scale-115 inset-0 bg-background/50 z-30 cursor-pointer"></div>
                 <Image
                   src="/nationsFlags/usa.jpg"
                   className="object-cover"
