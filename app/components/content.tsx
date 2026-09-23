@@ -52,13 +52,13 @@ export default function PageContent() {
               <h4 className="text-primary  mb-4 mt-4 font-mono-alt ">
                 Major Nations
               </h4>
-              <p className=" font-mono">
+              <p className="font-mono">
                 These Nations were at the forefront of the wars. View how these
                 nations changed warfare and tactics. View what each nation
                 focused on and prirotize{" "}
               </p>
             </div>
-            <div className="lg:px-8 grid grid-cols-2 grid-rows-2 lg:grid-cols-4 gap-6 lg:grid-rows-2 ">
+            <div className="lg:px-8 grid grid-cols-2 grid-rows-2 lg:grid-cols-3 gap-6 lg:grid-rows-2 ">
               <div className=" h-60 lg:h-100 relative">
                 <Pill title={"Allied"} />
                 <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
@@ -120,7 +120,7 @@ export default function PageContent() {
             </div>
             <div className="lg:p-8  mt-8">
               <h4 className="mb-4 mt-4">Minor Nations</h4>
-              <p className=" font-mono">
+              <p className="font-mono">
                 Minor nations that did not play a major role in the outcome of
                 the war but they contributed in other meaningful ways
               </p>
@@ -159,7 +159,7 @@ export default function PageContent() {
         <div
           id="campaigns"
           data-nav-section
-          className=" p-8 min-h-250 bg-secondary"
+          className="p-8 min-h-250 bg-secondary"
         >
           <div className="container">
             <Headings

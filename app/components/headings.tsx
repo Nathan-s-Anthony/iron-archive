@@ -60,7 +60,7 @@ export default function Headings({
           {!readExtra ? (
             <span>
               <br />
-              Read the
+              Read the&nbsp;
             </span>
           ) : (
             ""
@@ -68,7 +68,8 @@ export default function Headings({
           <span
             className={`font-sans ${invertColor ? "text-inherit" : "text-quaternary"} italic `}
           >
-            {mainHeadingHighlightedPart} {mainHeadingHighlightedPart2}
+            {mainHeadingHighlightedPart}
+            &nbsp;{mainHeadingHighlightedPart2}
           </span>
         </h2>
       </div>

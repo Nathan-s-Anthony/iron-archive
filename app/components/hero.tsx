@@ -24,11 +24,11 @@ export default function Hero() {
   ];
   return (
     <div className="overflow-hidden">
-      <div className="w-screen relative h-250 ">
+      <div className="w-screen relative h-280 lg:h-240 ">
         <Carousel />
         <div className="image-veil absolute inset-0" />
         <div className="archive-grid absolute inset-0 opacity-30" />
-        <div className="text-primary w-full flex  items-center lg:h-fit h-full  absolute top-0 lg:top-50 left-0 z-20">
+        <div className="text-primary w-full flex  items-center lg:h-fit   absolute top-0 lg:top-50 left-0 z-20">
           <div className="container">
             <div className=" max-w-200 flex flex-col gap-4">
               <span className="uppercase font-mono-alt text-xl text-secondary">
@@ -61,9 +61,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="text-primary w-full flex  items-center absolute lg:bottom-0 bottom-40 left-0 z-20">
-        <div className="border-t border-primary/30 w-full"></div>
       </div>
     </div>
   );

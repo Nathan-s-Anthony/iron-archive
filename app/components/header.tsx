@@ -59,7 +59,7 @@ export default function Header() {
                   href="/"
                   className="uppercase text-secondary  text-xl font-sans font-bold"
                 >
-                  iron archive
+                  THE iron archive
                 </Link>
               </div>
               <div className="flex flex-col">

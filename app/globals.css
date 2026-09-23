@@ -42,7 +42,6 @@
 
   h1 {
     font-family: var(--font-sans);
-
     line-height: 1;
     font-weight: 400;
     letter-spacing: -6.6px;
@@ -251,6 +250,9 @@
       rgba(16, 23, 26, 0.12) 72%,
       rgba(16, 23, 26, 0.55) 100%
     );
+  }
+  .active-carousel-text {
+    @apply text-secondary -translate-x-4 text-lg;
   }
 }
 @utility container {
