@@ -7,12 +7,12 @@ import SideNav from "./sideNav";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-
+  const [scrolledSideNav, setScrolledSideNav] = useState(false);
   const navList = [
     {
       id: 0,
-      name: "Catalogue",
-      link: "#catalogue",
+      name: "Collections",
+      link: "#collections",
     },
     {
       id: 1,
@@ -32,12 +32,17 @@ export default function Header() {
   ];
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY >= 50);
+      setScrolled(window.scrollY >= 200);
+    };
+    const handleScrollSideNav = () => {
+      setScrolledSideNav(window.scrollY === 0);
     };
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollSideNav);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollSideNav);
     };
   }, []);
 
@@ -54,7 +59,6 @@ export default function Header() {
                   href="/"
                   className="uppercase text-secondary  text-xl font-sans font-bold"
                 >
-                  {" "}
                   iron archive
                 </Link>
               </div>
@@ -65,11 +69,6 @@ export default function Header() {
                     <span className="text-sm bg-secondary px-3 py-1 rounded-xl text-background ">
                       WW2
                     </span>
-                    <Button
-                      value={"Change Era"}
-                      variant={"primary"}
-                      className={"w-fit px-3 py-2"}
-                    />
                   </div>
                 </div>
                 <div className="block w-full">
@@ -103,7 +102,7 @@ export default function Header() {
           </div>
         </nav>
       </header>
-      <SideNav scrolled={scrolled} />
+      <SideNav scrolled={scrolledSideNav} />
     </>
   );
 }

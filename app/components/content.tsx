@@ -13,7 +13,8 @@ export default function PageContent() {
     <div className=" block w-full">
       <div className="container">
         <div
-          id="catalogue"
+          id="collections"
+          data-nav-section-start
           data-nav-section
           className={` flex justify-between items-center border-b border-primary/30 `}
         >
@@ -25,13 +26,6 @@ export default function PageContent() {
               "Filter across theaters, technologies, and factions. Each entry is a starting point for deeper research."
             }
           />
-          {/* <div className={`py-4 flex gap-2 flex-col ${inView ? "animate-slide-in-left" : ""}`}>
-                        <span className="text-secondary">THE COLLECTION</span>
-                        <h2 className="t-3  font-display text-5xl leading-[.96] tracking-[-.045em] text-[#f3ecdf] lg:text-7xl ">Study the artifacts.<br />Read the <span className="font-sans italic text-quaternary">stories within</span></h2>
-                    </div>
-                    <div className={`${inView ? "animate-slide-in-right" : ""} flex justify-start flex-grow`}>
-                        <p className="text-primary/60 ">Filter across theaters, technologies, and factions. Each entry is a starting point for deeper research.</p>
-                    </div> */}
         </div>
       </div>
       <Filter />
@@ -42,7 +36,7 @@ export default function PageContent() {
             <div
               id="nations"
               data-nav-section
-              className={`  flex justify-between items-center border-b border-primary/30 `}
+              className={`flex justify-between items-center border-b border-primary/30`}
             >
               <Headings
                 topHeading={"THE NATIONS"}
@@ -64,7 +58,7 @@ export default function PageContent() {
                 focused on and prirotize{" "}
               </p>
             </div>
-            <div className="lg:px-8 grid  grid-cols-2 grid-rows-2 lg:grid-cols-4 gap-6 lg:grid-rows-2 ">
+            <div className="lg:px-8 grid grid-cols-2 grid-rows-2 lg:grid-cols-4 gap-6 lg:grid-rows-2 ">
               <div className=" h-60 lg:h-100 relative">
                 <Pill title={"Allied"} />
                 <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>

@@ -133,6 +133,10 @@
   @keyframes sideNav-reveal {
     0% {
       opacity: 0;
+      transform: translateX(50px);
+    }
+    50% {
+      opacity: 0.5;
       transform: translateX(100px);
     }
     100% {
@@ -142,15 +146,18 @@
   }
 
   .animate-side-nav-reveal {
-    transform-origin: right right;
-    display: block;
-    animation: sideNav-reveal 0.3s ease-in-out forwards;
+    transform-origin: left left;
+    animation: sideNav-reveal 0.1s ease-in forwards;
   }
 
   @keyframes sideNav-hide {
     0% {
       opacity: 1;
       transform: translateX(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(50px);
     }
 
     100% {
@@ -160,9 +167,21 @@
   }
 
   .animate-side-nav-hide {
-    transform-origin: left left;
-    display: hidden;
-    animation: sideNav-hide 0.2s ease-in forwards;
+    transform-origin: right right;
+    animation: sideNav-hide 0.1s ease-out forwards;
+  }
+
+  @keyframes sideNavLink-active {
+    0% {
+      transform: translateX(-15px);
+    }
+
+    100% {
+      transform: translateX(-25px);
+    }
+  }
+  .animate-active-link {
+    animation: sideNavLink-active 0.3s ease-in forwards;
   }
 
   @keyframes slide-in-left {
@@ -196,6 +215,42 @@
   .animate-slide-in-right {
     transform-origin: right right;
     animation: slide-in-right 0.5s ease-in forwards;
+  }
+
+  @keyframes thumb-reveal {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0;
+      transform: scale(1.15);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(1.25);
+    }
+  }
+
+  .animate-thumb-reveal {
+    transform-origin: top bottom;
+    animation: thumb-reveal 0.3s ease-in-out forwards;
+  }
+  .archive-grid {
+    background-image:
+      linear-gradient(rgba(234, 226, 210, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(234, 226, 210, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .image-veil {
+    background: linear-gradient(
+      90deg,
+      rgba(16, 23, 26, 0.95) 0%,
+      rgba(16, 23, 26, 0.6) 37%,
+      rgba(16, 23, 26, 0.12) 72%,
+      rgba(16, 23, 26, 0.55) 100%
+    );
   }
 }
 @utility container {
