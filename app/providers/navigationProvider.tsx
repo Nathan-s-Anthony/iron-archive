@@ -37,7 +37,6 @@ export function NavigationEventsProvider({
       // If we're at the very top, reset navigation
       if (window.scrollY <= 1) {
         setActiveSection("");
-
         window.history.replaceState(
           null,
           "",

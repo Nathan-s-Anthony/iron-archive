@@ -52,7 +52,18 @@ export default function Header() {
         className={`${scrolled ? "animate-header-hide" : "animate-header-reveal"} lg:block hidden transition-all duration-300 fixed z-40 border-b border-primary/30 top-0 left-0 right-0`}
       >
         <nav className="container">
-          <div className="grid grid-cols-3">
+          <div className="flex items-center justify-between">
+            <Link
+              href="/"
+              className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
+            >
+              THE iron archive
+            </Link>
+            <button className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest">
+              Search archive
+            </button>
+          </div>
+          {/* <div className="grid grid-cols-3">
             <div className="flex flex-col gap-2">
               <div className="flex items-center relative">
                 <Link
@@ -99,10 +110,10 @@ export default function Header() {
                 value="Search Archive"
               />
             </div>
-          </div>
+          </div> */}
         </nav>
       </header>
-      <SideNav scrolled={scrolledSideNav} />
+      {/* <SideNav scrolled={scrolledSideNav} /> */}
     </>
   );
 }

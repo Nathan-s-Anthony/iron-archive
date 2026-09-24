@@ -45,7 +45,7 @@ export default function Headings({
   return (
     <div
       ref={containerRef}
-      className="grid lg:grid-cols-2  items-center mb-6 mt-4"
+      className="flex justify-between w-full  mb-8 mt-8 items-center"
     >
       <div
         className={`${invertColor ? "text-background" : "text-primary"} flex gap-2 flex-col ${inView ? "animate-slide-in-left" : ""}`}
@@ -59,8 +59,9 @@ export default function Headings({
           {mainHeadingFirstPart}.
           {!readExtra ? (
             <span>
+              {" "}
               <br />
-              Read the&nbsp;
+              Read the
             </span>
           ) : (
             ""
@@ -68,20 +69,21 @@ export default function Headings({
           <span
             className={`font-sans ${invertColor ? "text-inherit" : "text-quaternary"} italic `}
           >
-            {mainHeadingHighlightedPart}
-            &nbsp;{mainHeadingHighlightedPart2}
+            &nbsp;{mainHeadingHighlightedPart}
+            <br />
+            {mainHeadingHighlightedPart2}
           </span>
         </h2>
       </div>
-      <div
+      {/* <div
         className={`${inView ? "animate-slide-in-right" : ""} flex justify-end `}
+      > */}
+      <p
+        className={`${invertColor ? "text-inherit" : "text-primary/60"} mb-0 mt-0 text-sm self-end justify-self-end max-w-80  `}
       >
-        <p
-          className={`${invertColor ? "text-inherit" : "text-primary/60"} lg:max-w-2/3 lg:mx-auto`}
-        >
-          {description}
-        </p>
-      </div>
+        {description}
+      </p>
+      {/* </div> */}
     </div>
   );
 }

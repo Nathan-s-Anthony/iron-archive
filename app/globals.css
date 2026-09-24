@@ -31,13 +31,11 @@
 @layer base {
   html {
     font-size: var(--base-font-size);
-    scroll-behavior: smooth;
     font-family: var(--font-sans);
   }
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-mono);
   }
 
   h1 {
@@ -47,6 +45,10 @@
     letter-spacing: -6.6px;
     @apply lg:text-8xl text-7xl;
   }
+  h1.simulator {
+    @apply lg:text-6xl font-sans text-primary mt-20;
+  }
+
   h2 {
     line-height: 1;
     font-family: var(--font-sans);
@@ -87,7 +89,7 @@
     font-family: var(--font-mono);
     font-size: var(--text-lg);
     line-height: 1.5;
-    @apply mt-4 mb-4 text-primary/60;
+    @apply text-primary/80;
   }
 
   a {
@@ -251,6 +253,24 @@
       rgba(16, 23, 26, 0.55) 100%
     );
   }
+  .image-veil-2 {
+    background: linear-gradient(
+      -80deg,
+      rgba(16, 23, 26, 0.45) 0%,
+      rgba(16, 23, 26, 0.4) 37%,
+      rgba(16, 23, 26, 0.15) 72%,
+      rgba(16, 23, 26, 0.55) 100%
+    );
+  }
+  .image-veil-3 {
+    background: linear-gradient(
+      0deg,
+      rgba(16, 23, 26, 0.671) 40%,
+      rgba(16, 23, 26, 0.568) 45%,
+      rgba(16, 23, 26, 0.15) 75%,
+      rgba(16, 23, 26, 0.55) 100%
+    );
+  }
   .collection-overlay {
     background: linear-gradient(
       0deg,
@@ -258,6 +278,16 @@
       rgba(16, 23, 26, 0.6) 37%,
       rgba(16, 23, 26, 0.12) 72%,
       rgba(16, 23, 26, 0.55) 100%
+    );
+  }
+  .diary-paper {
+    background-color: #ded1b4;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 29px,
+      rgba(82, 62, 41, 0.16) 30px,
+      transparent 31px
     );
   }
   .active-carousel-text {

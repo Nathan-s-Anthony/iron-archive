@@ -2,17 +2,14 @@ import Header from "./components/header";
 import Hero from "./components/hero";
 import PageContent from "./components/content";
 import { NavigationEventsProvider } from "./providers/navigationProvider";
+import GSAPCarousel from "./components/gsap/carousel";
 
 export default function Home() {
   return (
-    <NavigationEventsProvider>
-      <div>
-        <Header />
-        <div>
-          <Hero />
-        </div>
-        <PageContent />
-      </div>
-    </NavigationEventsProvider>
+    <div>
+      <Header />
+      <GSAPCarousel />
+      <PageContent />
+    </div>
   );
 }

@@ -1,281 +1,214 @@
 "use client";
-
-import Filter from "./filter";
-import FilterContent from "./filterContent";
 import Image from "next/image";
-import Pill from "./pill";
-import Headings from "./headings";
-import Panel from "./panel";
-import { BattleMap } from "battleforge";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { campaigns } from "../data/data";
+import NormandyTimeline from "./gsap/timelines/campaign/normandy";
+import CampaginTimeline from "./gsap/timelines/campaignTimeline";
+
+gsap.registerPlugin(ScrollTrigger);
 export default function PageContent() {
-  const campaigns = [
+  const campaignsContainer = useRef<HTMLDivElement>(null);
+  const campaignResearch = [
     {
-      id: "normandy",
-      year: "JUN—AUG 1944",
-      name: "Normandy Campaign",
-      theatre: "Western Europe",
-      location: "49°N · 0°W",
-      scale: "156,000 troops landed · D-Day",
-      summary:
-        "A foothold on the French coast widened into a breakout that pulled the western front eastward.",
-      allied: "Establish and expand a lodgement from the Channel ports.",
-      axis: "Contain the beachhead before Allied matériel could mass.",
-      note: "The map traces the advance from the landing sectors toward the Falaise pocket.",
-      paths: [
-        {
-          d: "M176 174 C245 206 276 216 342 245 S452 300 529 285",
-          color: "#355d78",
-          label: "US 1st Army",
-          x: 310,
-          y: 215,
-        },
-        {
-          d: "M173 250 C250 260 300 310 365 331 S477 355 545 325",
-          color: "#b99050",
-          label: "British / Canadian",
-          x: 298,
-          y: 325,
-        },
-        {
-          d: "M590 145 C530 182 500 220 475 270 S420 330 365 334",
-          color: "#8c3c32",
-          label: "German 7th Army",
-          x: 488,
-          y: 201,
-        },
-      ],
+      allied: {
+        name: "Allied Expeditionary Force",
+        troops: "1.53m troops landed by late August",
+        armour: "c. 4,000 tanks & self-propelled guns",
+        air: "c. 11,000 aircraft committed",
+      },
+      axis: {
+        name: "German forces in Normandy",
+        troops: "c. 380,000 troops in the theatre",
+        armour: "c. 1,500 tanks & assault guns",
+        air: "Limited operational air support",
+      },
+      diary: {
+        date: "07 June 1944",
+        byline: "Private diary, 50th (Northumbrian) Division",
+        text: "The fields are smaller than any map allows for. Every hedge seems to have a story and every lane ends in smoke.",
+        note: "Transcribed excerpt · personal field notebook",
+      },
     },
     {
-      id: "kursk",
-      year: "JUL—AUG 1943",
-      name: "Battle of Kursk",
-      theatre: "Eastern Front",
-      location: "51°N · 37°E",
-      scale: "6,000 armoured vehicles · Citadel",
-      summary:
-        "The largest armoured clash in history ended the last major German offensive in the east.",
-      allied:
-        "Absorb the attack in depth, then counter-offensive into the salient.",
-      axis: "Pinch off the Kursk salient from north and south.",
-      note: "Opposing arrows meet across layered Soviet defensive belts.",
-      paths: [
-        {
-          d: "M504 110 C462 150 440 185 437 240 S445 295 415 335",
-          color: "#8c3c32",
-          label: "9th Army",
-          x: 455,
-          y: 163,
-        },
-        {
-          d: "M572 385 C505 363 470 339 438 293 S400 253 354 240",
-          color: "#8c3c32",
-          label: "4th Panzer Army",
-          x: 488,
-          y: 347,
-        },
-        {
-          d: "M245 320 C292 294 334 280 380 260 S420 230 440 205",
-          color: "#b99050",
-          label: "Steppe Front",
-          x: 290,
-          y: 288,
-        },
-        {
-          d: "M225 165 C295 172 345 189 393 213",
-          color: "#b99050",
-          label: "Central Front",
-          x: 273,
-          y: 155,
-        },
-      ],
+      allied: {
+        name: "Soviet Red Army",
+        troops: "c. 1.9m personnel in the salient",
+        armour: "c. 5,000 tanks & assault guns",
+        air: "c. 2,900 aircraft",
+      },
+      axis: {
+        name: "German Army Group Centre & South",
+        troops: "c. 780,000 personnel",
+        armour: "c. 2,700 tanks & assault guns",
+        air: "c. 2,000 aircraft",
+      },
+      diary: {
+        date: "10 July 1943",
+        byline: "Red Army field notebook, Central Front",
+        text: "The ground shook at first light. We had waited for this attack; still, the sound of it arriving was another thing entirely.",
+        note: "Translated excerpt · field notebook",
+      },
     },
     {
-      id: "elalamein",
-      year: "OCT—NOV 1942",
-      name: "Second El Alamein",
-      theatre: "North Africa",
-      location: "30°N · 28°E",
-      scale: "195,000 men · Lightfoot",
-      summary:
-        "At a narrow desert corridor, Allied forces broke the Axis line and began the westward retreat.",
-      allied:
-        "Open lanes through minefields, commit armour, and force a retreat.",
-      axis: "Hold a thin defensive line between coast and Qattara Depression.",
-      note: "The sea defines the northern edge; movement concentrates on the narrow passable corridor.",
-      paths: [
-        {
-          d: "M130 160 C220 166 310 180 390 213 S515 254 605 255",
-          color: "#b99050",
-          label: "Eighth Army",
-          x: 305,
-          y: 159,
-        },
-        {
-          d: "M600 310 C510 307 435 300 357 272 S250 234 172 228",
-          color: "#8c3c32",
-          label: "Panzerarmee Afrika",
-          x: 420,
-          y: 321,
-        },
-        {
-          d: "M185 337 C285 323 355 319 450 335",
-          color: "#a6a275",
-          label: "Qattara Depression",
-          x: 305,
-          y: 357,
-        },
-      ],
+      allied: {
+        name: "British Eighth Army",
+        troops: "c. 195,000 personnel",
+        armour: "c. 1,000 tanks",
+        air: "Desert Air Force support",
+      },
+      axis: {
+        name: "Panzerarmee Afrika",
+        troops: "c. 116,000 personnel",
+        armour: "c. 500 tanks",
+        air: "Constrained by fuel and supply",
+      },
+      diary: {
+        date: "24 October 1942",
+        byline: "Commonwealth infantryman, field diary",
+        text: "The night was full of dust and noise. We moved by compass, by whispered orders, and by the flashes ahead.",
+        note: "Transcribed excerpt · private collection",
+      },
     },
   ];
+  useGSAP(
+    () => {
+      const normandy = document.querySelector("#normandy");
 
+      if (!normandy) return;
+      const image = normandy.querySelector(".campaign-image");
+      const title = normandy.querySelector(".campaign-title");
+      const summary = normandy.querySelector(".campaign-summary");
+      const imageVeil = normandy.querySelector(".campaign-image-veil");
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: normandy,
+          start: "center center",
+          end: "+=500",
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+        },
+      });
+
+      timeline
+        // Open the card
+        .to(normandy, {
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power3.inOut",
+        })
+
+        // Expand image
+        .to(
+          image,
+          {
+            scale: 1.35,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            duration: 1,
+            ease: "power3.inOut",
+          },
+          "<",
+        )
+        .to(
+          imageVeil,
+          {
+            x: 0,
+            scale: 1.35,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            duration: 1,
+            ease: "power3.inOut",
+          },
+          "<",
+        )
+
+        // Reveal title
+        .fromTo(
+          title,
+          {
+            y: 40,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+          },
+        )
+
+        // Reveal description
+        .fromTo(
+          summary,
+          {
+            y: 40,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+          },
+        );
+    },
+    {
+      scope: campaignsContainer,
+    },
+  );
   return (
-    <div className=" block w-full">
-      <div className="container">
-        <div
-          id="collections"
-          data-nav-section-start
-          data-nav-section
-          className={` flex justify-between items-center border-b border-primary/30 `}
-        >
-          <Headings
-            topHeading={"THE COLLECTION"}
-            mainHeadingFirstPart={"Study the artifacts"}
-            mainHeadingHighlightedPart={"stories within"}
-            description={
-              "Filter across theaters, technologies, and factions. Each entry is a starting point for deeper research."
-            }
-          />
-        </div>
-      </div>
-      <Filter />
-      <FilterContent />
+    <>
       <div className="">
-        <div className=" block w-full ">
-          <div className="container">
-            <div
-              id="nations"
-              data-nav-section
-              className={`flex justify-between items-center border-b border-primary/30`}
-            >
-              <Headings
-                topHeading={"THE NATIONS"}
-                mainHeadingFirstPart={"Study the nations"}
-                mainHeadingHighlightedPart={"stratgies and"}
-                mainHeadingHighlightedPart2={"more within"}
-                description={
-                  "Filter across theaters, technologies, and factions. Each entry is a starting point for deeper research."
-                }
-              />
-            </div>
-            <div className="lg:p-8 mt-8">
-              <h4 className="text-primary  mb-4 mt-4 font-mono-alt ">
-                Major Nations
-              </h4>
-              <p className="font-mono">
-                These Nations were at the forefront of the wars. View how these
-                nations changed warfare and tactics. View what each nation
-                focused on and prirotize{" "}
-              </p>
-            </div>
-            <div className="lg:px-8 grid grid-cols-2  lg:grid-cols-4 gap-6  ">
-              <div className=" group h-60 lg:h-100 relative">
-                <Pill title={"Allied"} />
-                <div className="absolute group-hover:scale-115 inset-0 bg-background/50 z-30 cursor-pointer"></div>
-                <Image
-                  src="/nationsFlags/usa.jpg"
-                  className="object-cover"
-                  alt="USA"
-                  fill
-                />
-              </div>
-              <div className=" h-60 w-full lg:h-100 relative">
-                <Pill title={"Allied"} />
-                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
-                <Image
-                  src="/nationsFlags/britian.jpg"
-                  className="object-cover"
-                  alt="USA"
-                  fill
-                />
-              </div>
-              <div className=" h-60 lg:h-100 relative">
-                <Pill title={"Axis"} />
-                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
-                <Image
-                  src="/nationsFlags/italy.jpg"
-                  className="object-cover"
-                  alt="USA"
-                  fill
-                />
-              </div>
-              <div className=" h-60 lg:h-100 relative">
-                <Pill title={"Axis"} />
-                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
-                <Image
-                  src="/nationsFlags/germany.jpg"
-                  className="object-cover"
-                  alt="USA"
-                  fill
-                />
-              </div>
-              <div className=" h-60 lg:h-100 relative">
-                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
-                <Image
-                  src="/nationsFlags/sovietUnion.jpg"
-                  className="object-cover object-top"
-                  alt="USA"
-                  fill
-                />
-              </div>
-              <div className=" h-60 lg:h-100 relative">
-                <div className="absolute group inset-0 bg-background/50 z-30 cursor-pointer"></div>
-                <Image
-                  src="/nationsFlags/japan.jpg"
-                  className="object-cover"
-                  alt="USA"
-                  fill
-                />
-              </div>
-            </div>
+        <div className="container">
+          <div className="flex flex-col justify-end   py-6 items-center">
+            <span className="text-primary/60 mb-0 mt-0">1939-45</span>
+            <h1 className="text-primary text-center">Campaign Dossier</h1>
+            <p className="max-w-xl mt-6 mb-6 text-center">
+              A comprehensive field dossier covering the major campaigns and
+              theatres of the Second World War, from the opening offensives of
+              1939 to the final campaigns of 1945.
+            </p>
           </div>
         </div>
-        <div id="campaigns" data-nav-section className=" bg-secondary">
-          <div className="container">
-            <Headings
-              readExtra
-              invertColor
-              topHeading={"OPERATIONAL HISTORY / OPERATIONS ROOM"}
-              mainHeadingFirstPart={"Battles are not points"}
-              mainHeadingHighlightedPart={"They are"}
-              mainHeadingHighlightedPart2={"movements"}
-              description={
-                "Read the push and counter-push: objectives, formations, and the terrain that governed every decision."
-              }
-            />
-            <div className="">
-              <Panel campaigns={campaigns} />
-            </div>
-          </div>
+        <div className="flex w-full gap-4 justify-around flex-wrap items-center">
+          {campaigns.map((campaign) => {
+            return (
+              <div className="flex relative justify-between" key={campaign.id}>
+                <div className="relative w-80  z-60 h-80 lg:w-120 lg:h-100">
+                  <div className="absolute bottom-0 p-6 z-50 text-primary/80">
+                    <h4 className="text-primary/90 text-shadow-xl font-sans font-medium text-3xl ">
+                      {campaign.name}
+                    </h4>
+                    <span className="text-inherit text-shadow-xl">
+                      {campaign.theatre}
+                    </span>
+                    <span className="text-inherit text-shadow-xl">
+                      {campaign.note}
+                    </span>
+                    <span className="text-inherit text-shadow-xl">
+                      {campaign.scale}
+                    </span>
+                  </div>
+                  <div className=" campaign-image-veil image-veil-3 z-40 absolute inset-0" />
+                  <Image
+                    alt={campaign.name}
+                    fill
+                    className="mb-4 campaign-image object-cover  rounded-md "
+                    src={campaign.image}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="bg-primary">
-          <div className="container">
-            <Headings
-              readExtra
-              invertColor
-              topHeading={"NAVIGATE HISTORY"}
-              mainHeadingFirstPart={"Battles are not points"}
-              mainHeadingHighlightedPart={"They are"}
-              mainHeadingHighlightedPart2={"movements"}
-              description={""}
-            />
-          </div>
-        </div>
-        {/* <ScrollSmoothing /> */}
-        <BattleMap
-          API_KEY={process.env.NEXT_PUBLIC_MAPTILER_KEY}
-          workerUrl={"/maplibre/maplibre-gl-worker.mjs"}
-        />
       </div>
-    </div>
+      <CampaginTimeline />
+    </>
   );
 }

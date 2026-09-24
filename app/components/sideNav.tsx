@@ -40,10 +40,8 @@ export default function SideNav({ scrolled }: { scrolled: boolean }) {
 
   return (
     <nav
-      className={` fixed right-5 p-2 h-60 flex justify-end  z-50 items-center w-45  top-50 ${
-        !scrolled
-          ? "animate-side-nav-reveal"
-          : "animate-side-nav-hide opacity-0"
+      className={` fixed right-5 p-2 h-60 flex justify-end  z-50 items-center w-45 opacity-0  top-50 ${
+        scrolled ? "animate-side-nav-reveal" : "animate-side-nav-hide opacity-0"
       }}`}
     >
       <ul className="w-full flex flex-col gap-2">
