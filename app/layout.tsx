@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/header";
 import { NavigationEventsProvider } from "./providers/navigationProvider";
 import Footer from "./components/footer";
+import { ModalProvider } from "./providers/modelProvider";
 
 const frauncesSans = Fraunces({
   variable: "--font-fraunces-sans",
@@ -33,8 +34,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${frauncesSans.variable} ${manRopeMono.variable} ${dmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
-        <Footer />
+        <ModalProvider>
+          {children}
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Campaign } from "../types/campaignTypes";
 import Button from "./button";
 import { useRouter } from "next/navigation";
-export default function Panel({ campaigns }: { campaigns: Campaign[] }) {
+import { CampaignTypes } from "../types/campaignTypes";
+export default function Panel({ campaigns }: { campaigns: CampaignTypes[] }) {
   const router = useRouter();
   const [activeCampaign, setActiveCampaign] = useState({
     campaign: "normandy",
@@ -30,13 +30,13 @@ export default function Panel({ campaigns }: { campaigns: Campaign[] }) {
                 key={item.id}
               >
                 <span className="text-primary font-mono-alt text-sm text-shadow-xl">
-                  {item.year}
+                  {item.introduction.theatre}
                 </span>
                 <h6 className="text-primary text-2xl font-sans  text-shadow-xl font-medium">
-                  {item.name}
+                  {item.introduction.theatre}
                 </h6>
                 <p className="text-xs mt-2 font-mono-alt text-shadow-xl">
-                  {item.theatre}
+                  {item.introduction.theatre}
                 </p>
               </div>
             );
@@ -61,7 +61,7 @@ export default function Panel({ campaigns }: { campaigns: Campaign[] }) {
                         SELECTED CAMPAIGN
                       </span>
                       <h4 className="font-sans font-medium text-foreground text-shadow-xl">
-                        {campaign.name}
+                        test{" "}
                       </h4>
                       <span className="text-xs font-mono-alt text-foreground/80">
                         49°N · 0°W · 156,000 troops landed · D-Day

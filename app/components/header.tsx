@@ -4,10 +4,13 @@ import Link from "next/link";
 import Button from "./button";
 import { useEffect, useState } from "react";
 import SideNav from "./sideNav";
+import { useModal } from "../providers/modelProvider";
+import Modal from "./modal/modal";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [scrolledSideNav, setScrolledSideNav] = useState(false);
+  const { modal, openModal, closeModal } = useModal();
   const navList = [
     {
       id: 0,
@@ -59,7 +62,10 @@ export default function Header() {
             >
               THE iron archive
             </Link>
-            <button className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest">
+            <button
+              onClick={() => openModal("archive")}
+              className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest"
+            >
               Search archive
             </button>
           </div>

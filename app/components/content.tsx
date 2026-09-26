@@ -5,8 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { campaigns } from "../data/data";
-import NormandyTimeline from "./gsap/timelines/campaign/normandy";
-import CampaginTimeline from "./gsap/timelines/campaignTimeline";
+import TimelinePage from "./gsap/timelines/timeline";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function PageContent() {
@@ -208,7 +207,7 @@ export default function PageContent() {
           })}
         </div>
       </div>
-      <CampaginTimeline />
+      <TimelinePage />
     </>
   );
 }
