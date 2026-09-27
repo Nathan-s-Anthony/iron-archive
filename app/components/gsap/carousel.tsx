@@ -388,6 +388,9 @@ export default function GSAPCarousel() {
             <div className="image-veil-2 absolute inset-0" />
             <div className="container relative z-10 flex h-250 w-full flex-col justify-between">
               <div className="slide-content flex h-2/3 flex-col gap-4 justify-end">
+                <button className="slide-button absolute text-primary font-mono-alt border border-secondary z-50 right-20 bottom-20">
+                  View Collection
+                </button>
                 <span className="slide-faction font-mono-alt text-sm uppercase tracking-widest text-secondary">
                   {section.faction}
                 </span>
@@ -411,9 +414,6 @@ export default function GSAPCarousel() {
                 </div>
               </div>
             </div>
-            <button className="slide-button absolute text-primary font-mono-alt border border-secondary z-50 right-10 bottom-10">
-              View {section.name}
-            </button>
           </div>
         ))}
       </div>

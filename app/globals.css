@@ -274,10 +274,10 @@
   .image-veil-4 {
     background: linear-gradient(
       -80deg,
-      rgba(16, 23, 26, 0.45) 0%,
-      rgba(16, 23, 26, 0.4) 37%,
-      rgba(16, 23, 26, 0.15) 72%,
-      rgba(16, 23, 26, 0.55) 100%
+      rgba(16, 23, 26, 0.705) 0%,
+      rgba(16, 23, 26, 0.705) 37%,
+      rgba(16, 23, 26, 0.705) 72%,
+      rgba(16, 23, 26, 0.705) 100%
     );
   }
   .collection-overlay {

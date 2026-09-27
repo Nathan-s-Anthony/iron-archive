@@ -102,7 +102,6 @@ export default function PageContent() {
           ease: "power3.inOut",
         })
 
-        // Expand image
         .to(
           image,
           {

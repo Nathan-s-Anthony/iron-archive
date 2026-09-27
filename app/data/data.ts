@@ -1,4 +1,16 @@
-
+import { Collections } from "../types/collections";
+  export const navList = [
+    {
+      id: 0,
+      name: "Collections",
+      link: "/war-room/collections",
+    },
+    {
+      id: 1,
+      name: "Historical Battle Timeline",
+      link: "/war-room/battle-forge",
+    },
+  ];
   export const campaigns = [
     {
       id: "kursk",
@@ -121,6 +133,64 @@
       ],
     },
   ];
+
+ export const collections: Collections = {
+  name: "collections",
+  catalog: [],
+  carousel: [
+    {
+      name: "Supermarine Spitfire",
+      designation: "Mk. IXc · 1942",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Aircraft",
+      detail: "Single-seat fighter · 1,000+ hp",
+      image:
+        "https://images.unsplash.com/photo-1693916064465-8036ac1a0756?auto=format&fit=crop&w=1400&q=85",
+      imageAlt: "Historic aircraft displayed inside a museum",
+      tone: "from-[#182529]/80 via-transparent",
+    },
+
+    {
+      name: "M4 Sherman",
+      designation: "M4A3 · 1942",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Armoured",
+      detail: "Medium tank · 75 mm M3 gun",
+      image:
+        "https://images.unsplash.com/photo-1779565292206-49a9b5716ad6?auto=format&fit=crop&w=1200&q=85",
+      imageAlt: "Weathered military tank track and armour",
+      tone: "from-[#293425]/80 via-transparent",
+    },
+
+    {
+      name: "Panzerkampfwagen IV",
+      designation: "Ausf. H · 1943",
+      faction: "Axis",
+      era: "1939—45",
+      type: "Armoured",
+      detail: "Medium tank · 75 mm KwK 40",
+      image:
+        "https://images.unsplash.com/photo-1695120972968-21ffead317fb?auto=format&fit=crop&w=1200&q=85",
+      imageAlt: "Armoured vehicle on outdoor display",
+      tone: "from-[#3a3220]/80 via-transparent",
+    },
+
+    {
+      name: "Yakovlev Yak-3",
+      designation: "Series 2 · 1944",
+      faction: "Soviet",
+      era: "1939—45",
+      type: "Aircraft",
+      detail: "Low-altitude fighter · Klimov V-12",
+      image:
+        "https://images.unsplash.com/photo-1782034419865-535c50b9695a?auto=format&fit=crop&w=1200&q=85",
+      imageAlt: "Vintage fighter aircraft displayed in a hangar",
+      tone: "from-[#17242b]/80 via-transparent",
+    },
+  ],
+};
 //   const campaigns: Campaign[] = [
 //   { id: 'normandy', year: 'JUN—AUG 1944', name: 'Normandy Campaign', theatre: 'Western Europe', location: '49°N · 0°W', scale: '156,000 troops landed · D-Day', summary: 'A foothold on the French coast widened into a breakout that pulled the western front eastward.', allied: 'Establish and expand a lodgement from the Channel ports.', axis: 'Contain the beachhead before Allied matériel could mass.', note: 'The map traces the advance from the landing sectors toward the Falaise pocket.', paths: [{ d: 'M176 174 C245 206 276 216 342 245 S452 300 529 285', color: '#355d78', label: 'US 1st Army', x: 310, y: 215 }, { d: 'M173 250 C250 260 300 310 365 331 S477 355 545 325', color: '#b99050', label: 'British / Canadian', x: 298, y: 325 }, { d: 'M590 145 C530 182 500 220 475 270 S420 330 365 334', color: '#8c3c32', label: 'German 7th Army', x: 488, y: 201 }] },
 //   { id: 'kursk', year: 'JUL—AUG 1943', name: 'Battle of Kursk', theatre: 'Eastern Front', location: '51°N · 37°E', scale: '6,000 armoured vehicles · Citadel', summary: 'The largest armoured clash in history ended the last major German offensive in the east.', allied: 'Absorb the attack in depth, then counter-offensive into the salient.', axis: 'Pinch off the Kursk salient from north and south.', note: 'Opposing arrows meet across layered Soviet defensive belts.', paths: [{ d: 'M504 110 C462 150 440 185 437 240 S445 295 415 335', color: '#8c3c32', label: '9th Army', x: 455, y: 163 }, { d: 'M572 385 C505 363 470 339 438 293 S400 253 354 240', color: '#8c3c32', label: '4th Panzer Army', x: 488, y: 347 }, { d: 'M245 320 C292 294 334 280 380 260 S420 230 440 205', color: '#b99050', label: 'Steppe Front', x: 290, y: 288 }, { d: 'M225 165 C295 172 345 189 393 213', color: '#b99050', label: 'Central Front', x: 273, y: 155 }] },

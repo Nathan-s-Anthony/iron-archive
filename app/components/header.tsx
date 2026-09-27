@@ -6,28 +6,14 @@ import { useEffect, useState } from "react";
 import SideNav from "./sideNav";
 import { useModal } from "../providers/modelProvider";
 import Modal from "./modal/modal";
+import { navList } from "../data/data";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [scrolledSideNav, setScrolledSideNav] = useState(false);
   const { modal, openModal, closeModal } = useModal();
-  const navList = [
-    {
-      id: 0,
-      name: "Collections",
-      link: "/war-room/collections",
-    },
-    {
-      id: 2,
-      name: "Campaigns",
-      link: "/war-room/campaign",
-    },
-    {
-      id: 3,
-      name: "Historical Battle Simulator",
-      link: "/war-room/battle-forge",
-    },
-  ];
+  const pathName = usePathname();
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY >= 200);
@@ -51,32 +37,57 @@ export default function Header() {
       >
         <nav className="container">
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
-            >
-              THE iron archive
-            </Link>
-            <ul className="flex justify-center gap-4">
-              {navList.map((item) => {
-                return (
-                  <li key={item.id}>
-                    <Link
-                      href={`${item.link}`}
-                      className="uppercase text-primary"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-            <button
-              onClick={() => openModal("archive")}
-              className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest"
-            >
-              Search archive
-            </button>
+            <div className="flex gap-4">
+              {pathName !== "/" && <div className="bg-red-500">test</div>}
+              <Link
+                href="/"
+                className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
+              >
+                THE iron archive
+              </Link>
+            </div>
+            {pathName !== "/" && (
+              <div>
+                <h4 className="uppercase font-mono-alt text-sm">
+                  {pathName.split("/")[2]} ROOM
+                </h4>
+              </div>
+            )}
+            {pathName === "/" && (
+              <ul className="flex justify-center gap-4">
+                {navList.map((item) => {
+                  return (
+                    <li key={item.id}>
+                      <Link
+                        href={`${item.link}`}
+                        className="uppercase relative  block w-fit text-primary"
+                      >
+                        {item.name}
+                        {item.id === 1 && (
+                          <div className="absolute top-0 -right-9 z-10">
+                            <div className=" relative flex h-6 items-center bg-secondary px-2 text-foreground shadow-sm">
+                              <span className="text-[10px] font-mono-alt font-bold tracking-widest">
+                                AI
+                              </span>
+                              <span className="absolute -right-1 top-0 h-full w-1" />
+                            </div>
+                          </div>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+
+            {pathName !== "/war-room/collections" && (
+              <button
+                onClick={() => openModal("archive")}
+                className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest"
+              >
+                Search archive
+              </button>
+            )}
           </div>
 
           {/* <div className="grid grid-cols-3">

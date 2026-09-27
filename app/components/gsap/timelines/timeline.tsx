@@ -341,7 +341,7 @@ export default function TimelinePage() {
                 className="h-screen w-full relative  overflow-hidden nations"
                 key={`${nation.faction}-${id}`}
               >
-                <div className="image-veil-4 absolute inset-0 " />
+                <div className="image-veil-4 z-70 absolute inset-0 " />
                 <div className=" flex flex-col z-60 h-full w-full">
                   <Image
                     className="absolute nation-image w-full h-full object-cover"
@@ -350,11 +350,11 @@ export default function TimelinePage() {
                     height={400}
                     src={`${nation.image}${nation.id}.jpg`}
                   />
-                  <div className="absolute  inset-0 flex items-center justify-center gap-4 flex-col">
+                  <div className="absolute  z-80 inset-0 flex items-center justify-center gap-4 flex-col">
                     <h2 className="nation-title text-primary  font-mono-alt text-7xl">
                       {nation.name}
                     </h2>
-                    <p className=" max-w-2xl nation-desc text-primary text-2xl">
+                    <p className="max-w-2xl nation-desc text-primary/80 text-xl">
                       {nation.description}
                     </p>
                   </div>
@@ -362,6 +362,11 @@ export default function TimelinePage() {
               </div>
             );
           })}
+        </div>
+      </section>
+      <section id="battle-forge">
+        <div className="">
+          <h2 className="text-primary">BATTLE FORGE</h2>
         </div>
       </section>
     </div>
