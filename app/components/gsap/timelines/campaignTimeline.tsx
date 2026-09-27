@@ -7,9 +7,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { normandyCampaign } from "@/app/data/timeline/campaigns/normandy/data";
 import Image from "next/image";
 import NationTimeline from "./nationTimeline";
+import { useRouter } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 export default function CampaginTimeline() {
   const campaignsContainer = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useGSAP(
     () => {
@@ -38,33 +40,24 @@ export default function CampaginTimeline() {
       const scrollDistance = totalContentHeight - letterHeight;
       const contentHeight = objectivesContainer.scrollHeight;
 
-      const timeline = gsap.timeline({
+      const introTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: introduction,
-          start: "top top",
-          end: "+=1500",
+          start: "center center",
+          end: "+=800",
           scrub: 1,
-          pin: true,
-          pinnedContainer: introduction,
         },
       });
 
-      // --------------------------------
-      // 1. Open the letter
-      // --------------------------------
-
-      timeline.fromTo(
+      introTimeline.fromTo(
         letter,
         {
           height: 200,
-          duration: 1,
-          ease: "power3.inOut",
         },
         {
           height: contentHeight + 380,
           opacity: 1,
           duration: 1,
-          stagger: 0.08,
           ease: "power3.out",
         },
       );
@@ -72,46 +65,34 @@ export default function CampaginTimeline() {
       // 2. Scroll through the contents
       // --------------------------------
 
-      timeline.fromTo(
-        objectives,
-        {
-          y: 50,
-        },
-        {
-          x: 0,
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "none",
-        },
-        1,
-      );
-      const objectiveTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: objectivesContainer,
-          start: "top top",
-
-          end: contentHeight + 380,
-          toggleActions: "play none none reverse",
-        },
-      });
       objectives.forEach((objective) => {
         const title = objective.querySelector<HTMLElement>(".objective-title");
         const desc = objective.querySelector<HTMLElement>(".objective-desc");
         const image = objective.querySelector<HTMLElement>(".objective-image");
+
         if (!title || !desc || !image) return;
+
+        gsap.set([image, title, desc], {
+          opacity: 0,
+        });
+
+        const objectiveTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: objective,
+            start: "center center",
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+          },
+        });
 
         objectiveTimeline
           .fromTo(
             image,
             {
-              y: -110,
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
+              x: -110,
             },
             {
-              y: 0,
+              x: 0,
               opacity: 1,
               duration: 0.6,
               ease: "power3.out",
@@ -120,11 +101,10 @@ export default function CampaginTimeline() {
           .fromTo(
             title,
             {
-              y: 110,
-              opacity: 0,
+              x: 110,
             },
             {
-              y: 0,
+              x: 0,
               opacity: 1,
               duration: 0.6,
               ease: "power3.out",
@@ -134,11 +114,10 @@ export default function CampaginTimeline() {
           .fromTo(
             desc,
             {
-              y: 110,
-              opacity: 0,
+              x: 110,
             },
             {
-              y: 0,
+              x: 0,
               opacity: 1,
               duration: 0.6,
               ease: "power3.out",
@@ -156,9 +135,9 @@ export default function CampaginTimeline() {
       const nationsTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: nationsContainer,
-          start: "bottom bttom",
+          start: "center center",
           // end: `+=${2500 + scrollDistance}`,
-          end: `+=${2500 + scrollDistance}`,
+          end: `+=900`,
           scrub: 1,
           anticipatePin: 1,
         },
@@ -221,16 +200,14 @@ export default function CampaginTimeline() {
               {" "}
               {normandyCampaign.timeline.length - 1 && (
                 <div className="relative flex w-full items-center justify-end gap-4">
-                  <button className="absolute left-1/2 -translate-x-1/2 border hover:bg-[#8c3c32]/80 hover:text-primary border-[#8c3c32]/50 px-2 py-1 font-mono text-sm uppercase tracking-[.12em] text-[#8c3c32]">
+                  {/* <button className="absolute left-1/2 -translate-x-1/2 border hover:bg-[#8c3c32]/80 hover:text-primary border-[#8c3c32]/50 px-2 py-1 font-mono text-sm uppercase tracking-[.12em] text-[#8c3c32]">
                     OPEN LETTER
-                  </button>
-
+                  </button> */}
                   <div className="flex gap-4 mr-4">
-                    <button className="border hover:bg-[#8c3c32]/80 hover:text-primary border-[#8c3c32]/50 px-2 py-1 font-mono text-sm uppercase tracking-[.12em] text-[#8c3c32]">
-                      READ MORE
-                    </button>
-
-                    <button className="border hover:bg-[#8c3c32]/80 hover:text-primary border-[#8c3c32]/50 px-2 py-1 font-mono text-sm uppercase tracking-[.12em] text-[#8c3c32]">
+                    <button
+                      onClick={() => router.push("/campaigns")}
+                      className="border hover:bg-[#8c3c32]/80 hover:text-primary border-[#8c3c32]/50 px-2 py-1 font-mono text-sm uppercase tracking-[.12em] text-[#8c3c32]"
+                    >
                       VIEW ALL CAMPAIGNS
                     </button>
                   </div>
@@ -240,7 +217,7 @@ export default function CampaginTimeline() {
             <div className="objectives-container  ">
               {normandyCampaign.timeline.map((timeline) => {
                 return (
-                  <div key={timeline.id}>
+                  <div key={timeline.id} className="mb-10 mt-10">
                     <div className=" grid grid-cols-2 objectives gap-4 p-6   h-100 mt-10 justify-center">
                       <div className="relative ">
                         <Image

@@ -15,22 +15,17 @@ export default function Header() {
     {
       id: 0,
       name: "Collections",
-      link: "#collections",
-    },
-    {
-      id: 1,
-      name: "Nations",
-      link: "#nations",
+      link: "/collections",
     },
     {
       id: 2,
       name: "Campaigns",
-      link: "#campiagns",
+      link: "/campaign",
     },
     {
       id: 3,
-      name: "Timelines",
-      link: "#timelines",
+      name: "Historical Battle Simulator",
+      link: "/war-room/battle-forge",
     },
   ];
   useEffect(() => {
@@ -62,6 +57,20 @@ export default function Header() {
             >
               THE iron archive
             </Link>
+            <ul className="flex justify-center gap-4">
+              {navList.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <Link
+                      href={`${item.link}`}
+                      className="uppercase text-primary"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
             <button
               onClick={() => openModal("archive")}
               className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest"
@@ -69,6 +78,7 @@ export default function Header() {
               Search archive
             </button>
           </div>
+
           {/* <div className="grid grid-cols-3">
             <div className="flex flex-col gap-2">
               <div className="flex items-center relative">
