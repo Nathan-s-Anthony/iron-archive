@@ -138,14 +138,14 @@ import { Collections } from "../types/collections";
   name: "collections",
   catalogFeatured:[
      {
-      type: "Aircraft",
+      type: "Aircrafts",
       image:
         "https://images.unsplash.com/photo-1561323578-dde5e688b4b7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0",
       imageAlt: "Historic aircraft displayed inside a museum",
     },
 
     {
-      type: "Armoured",
+      type: "Armoured-vehicles",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/f/f6/A_British_Sherman_tank_advancing_near_Catania%2C_Sicily%2C_4_August_1943._NA5522.jpg",
       imageAlt: "Weathered military tank track and armour",
@@ -165,7 +165,6 @@ import { Collections } from "../types/collections";
       era: "1939—45",
       type: "Medium Tank",
       detail: "Medium tank · 75 mm M3 gun",
-
       front: [
         "North Africa",
         "Italy",
@@ -646,7 +645,7 @@ import { Collections } from "../types/collections";
       type: "Armoured",
       detail: "Medium tank · 75 mm M3 gun",
       image:
-        "https://images.unsplash.com/photo-1779565292206-49a9b5716ad6?auto=format&fit=crop&w=1200&q=85",
+        "https://upload.wikimedia.org/wikipedia/commons/f/f6/A_British_Sherman_tank_advancing_near_Catania%2C_Sicily%2C_4_August_1943._NA5522.jpg",
       imageAlt: "Weathered military tank track and armour",
       tone: "from-[#293425]/80 via-transparent",
     },

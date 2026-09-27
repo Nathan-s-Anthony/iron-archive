@@ -13,6 +13,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [scrolledSideNav, setScrolledSideNav] = useState(false);
   const { modal, openModal, closeModal } = useModal();
+  const [searchQuery, setSearchQuery] = useState("");
   const pathName = usePathname();
   const router = useRouter();
   useEffect(() => {
@@ -30,7 +31,29 @@ export default function Header() {
       window.removeEventListener("scroll", handleScrollSideNav);
     };
   }, []);
+  const onSubmit = (formData: FormData) => {
+    const searchQuery = formData.get("search-query") as string;
+    if (searchQuery) {
+      setSearchQuery(searchQuery);
+      console.log("current query", searchQuery);
+    }
+    // const password = formData.get("password") as string;
+    // try {
+    //   const response = await loginUser({
+    //     email,
+    //     password,
+    //   }).unwrap();
 
+    //   console.log(response);
+    //   if (response.user) {
+    //     setIsAuthenticated(true);
+    //     router.replace("/dashboard/overview");
+    //     console.log(response.message, isAuthenticated);
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
+  };
   return (
     <>
       <header
@@ -129,12 +152,24 @@ export default function Header() {
             )}
 
             {pathName === "/" && (
-              <button
-                onClick={() => openModal("archive")}
-                className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest"
+              <form
+                id="search"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  onSubmit(new FormData(e.currentTarget));
+                }}
+                className=" relative"
               >
-                Search archive
-              </button>
+                <input
+                  name="search-query"
+                  id="search-query"
+                  className="bg-none text-primary  text-shadow-2xl shadow-2xl  border-primary border px-4 py-2 rounded-md"
+                  placeholder="Search Archive..."
+                />
+                <div className="fixed left-0 right-0 top-25 h-full">
+                  <div className="container">{searchQuery}</div>
+                </div>
+              </form>
             )}
           </div>
 

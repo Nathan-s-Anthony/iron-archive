@@ -8,6 +8,17 @@ import Image from "next/image";
 
 const sections = [
   {
+    name: "M4 Sherman",
+    designation: "M4A3 · 1942",
+    faction: "Allied",
+    era: "1939—45",
+    type: "Armoured",
+    detail: "Medium tank · 75 mm M3 gun",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/f6/A_British_Sherman_tank_advancing_near_Catania%2C_Sicily%2C_4_August_1943._NA5522.jpg",
+    imageAlt: "Weathered military tank track and armour",
+  },
+  {
     name: "Tiger I",
     designation: "Panzer VI · 1942",
     faction: "Axis",
@@ -15,7 +26,7 @@ const sections = [
     type: "Heavy Tank",
     detail: "Heavy tank · 88 mm KwK 36",
     image:
-      "https://tankmuseum.org/wp-content/uploads/2020/04/Tiger-I-feat-1100x500.jpg",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Punkt_obs%C5%82ugi_niemieckich_czo%C5%82g%C3%B3w_na_froncie_pod_Nettuno_-_Anzio_%282-2177%29.jpg/1920px-Punkt_obs%C5%82ugi_niemieckich_czo%C5%82g%C3%B3w_na_froncie_pod_Nettuno_-_Anzio_%282-2177%29.jpg",
     imageAlt: "German heavy tank displayed in a museum",
   },
 
@@ -27,7 +38,7 @@ const sections = [
     type: "Medium Tank",
     detail: "Medium tank · 75 mm KwK 42",
     image:
-      "https://tankmuseum.org/wp-content/uploads/2020/03/Panther-feat-1100x500.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/38/Bundesarchiv_Bild_146-1976-124-12A%2C_Russland%2C_Infanterie_und_Panzer_im_Kampf.jpg",
     imageAlt: "German Panther tank displayed outdoors",
   },
   {
@@ -38,33 +49,21 @@ const sections = [
     type: "Aircraft",
     detail: "Single-seat fighter · 1,000+ hp",
     image:
-      "https://images.unsplash.com/photo-1693916064465-8036ac1a0756?auto=format&fit=crop&w=1400&q=85",
+      "https://upload.wikimedia.org/wikipedia/commons/8/82/Spitfire_IIA_P7666.jpg",
     imageAlt: "Historic aircraft displayed inside a museum",
   },
 
-  {
-    name: "M4 Sherman",
-    designation: "M4A3 · 1942",
-    faction: "Allied",
-    era: "1939—45",
-    type: "Armoured",
-    detail: "Medium tank · 75 mm M3 gun",
-    image:
-      "https://images.unsplash.com/photo-1779565292206-49a9b5716ad6?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Weathered military tank track and armour",
-  },
-
-  {
-    name: "Panzerkampfwagen IV",
-    designation: "Ausf. H · 1943",
-    faction: "Axis",
-    era: "1939—45",
-    type: "Armoured",
-    detail: "Medium tank · 75 mm KwK 40",
-    image:
-      "https://images.unsplash.com/photo-1695120972968-21ffead317fb?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Armoured vehicle on outdoor display",
-  },
+  // {
+  //   name: "Panzerkampfwagen IV",
+  //   designation: "Ausf. H · 1943",
+  //   faction: "Axis",
+  //   era: "1939—45",
+  //   type: "Armoured",
+  //   detail: "Medium tank · 75 mm KwK 40",
+  //   image:
+  //     "https://images.unsplash.com/photo-1695120972968-21ffead317fb?auto=format&fit=crop&w=1200&q=85",
+  //   imageAlt: "Armoured vehicle on outdoor display",
+  // },
 
   // {
   //   name: "Yakovlev Yak-3",
@@ -82,17 +81,17 @@ const sections = [
   // HEAVY HITTERS
   // ─────────────────────────────
 
-  {
-    name: "T-34",
-    designation: "T-34/85 · 1944",
-    faction: "Soviet",
-    era: "1939—45",
-    type: "Medium Tank",
-    detail: "Medium tank · 85 mm ZiS-S-53",
-    image:
-      "https://tankmuseum.org/wp-content/uploads/2020/11/T-34-76-Featured.jpg",
-    imageAlt: "Soviet T-34 tank",
-  },
+  // {
+  //   name: "T-34",
+  //   designation: "T-34/85 · 1944",
+  //   faction: "Soviet",
+  //   era: "1939—45",
+  //   type: "Medium Tank",
+  //   detail: "Medium tank · 85 mm ZiS-S-53",
+  //   image:
+  //     "https://tankmuseum.org/wp-content/uploads/2020/11/T-34-76-Featured.jpg",
+  //   imageAlt: "Soviet T-34 tank",
+  // },
 
   {
     name: "P-51 Mustang",

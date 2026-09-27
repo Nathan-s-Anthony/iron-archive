@@ -22,6 +22,7 @@ type Catalog ={
     armament:string;
     topSpeed:string;
     crew:number;
+    type:string;
     summary:string
 }
 type Fronts = string[];

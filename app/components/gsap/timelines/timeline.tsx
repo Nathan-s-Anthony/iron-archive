@@ -368,7 +368,12 @@ export default function TimelinePage() {
       </section>
       <section id="battle-forge">
         <div className="">
-          <h2 className="text-primary">BATTLE FORGE</h2>
+          <h2 className="text-primary">BATTLE TIMELINE SIMULATOR</h2>
+          <p>
+            Simulate events that unfolded in each campaign and features an
+            experimental mode where it can control and make decisions to
+            possibly change the outcome of certain battles.
+          </p>
         </div>
       </section>
     </div>

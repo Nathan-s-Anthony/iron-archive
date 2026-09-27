@@ -193,7 +193,7 @@ export default function CampaginTimeline() {
                 CONFIDENTIAL
               </span>
             </div>
-            <blockquote className="mt-8 font-display text-3xl leading-[1.25]">
+            <blockquote className="mt-8 font-display text-6xl leading-[1.25]">
               INVASION OF NORMANDY
             </blockquote>
             <p className="mt-8 border-t border-[#6b5738]/25 pt-3 font-mono text-[9px] uppercase tracking-[.1em] text-[#6b5738]">

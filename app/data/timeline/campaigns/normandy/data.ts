@@ -20,7 +20,7 @@ export const normandyCampaign: CampaignTypes = {
       "The Normandy invasion was the result of months of enormous Allied preparation in Britain. Troops trained for amphibious assaults while ships, landing craft, aircraft, armour and supplies were assembled for Operation Overlord. Allied deception operations also sought to convince German commanders that the main invasion would come at Calais rather than Normandy.",
     type: "introduction",
     image:
-      "https://images.unsplash.com/photo-1654424931721-01f8487cf5f1?auto=format&fit=crop&w=1600&q=85",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f9/British_Sherman_tanks_and_a_6-pdr_anti-tank_gun_in_the_centre_of_Caen%2C_Normandy%2C_10_July_1944._B6924.jpg",
   },
 
   {
@@ -53,7 +53,7 @@ export const normandyCampaign: CampaignTypes = {
       "Caen was an important road and rail hub and one of the principal objectives of the British and Canadian forces. It proved far harder to capture than expected. German formations, including powerful armoured units, concentrated around the city and repeatedly slowed the Allied advance. British and Canadian attacks gradually forced the Germans out of the city during July, but the fighting devastated much of Caen and tied down significant German forces on the eastern side of the Allied front.",
     type: "battle",
     image:
-      "https://images.unsplash.com/photo-1654424931721-01f8487cf5f1?auto=format&fit=crop&w=1600&q=85",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f5/Operationepsom.jpg",
   },
 
   {
@@ -64,7 +64,7 @@ export const normandyCampaign: CampaignTypes = {
       "The Normandy bocage was a landscape of small fields divided by thick hedgerows, sunken lanes and embankments. Instead of providing easy terrain for Allied armour, it created a maze of defensive positions that German infantry could exploit. American forces advancing inland often had to fight for individual fields and hedgerows. The terrain slowed movement, restricted visibility and made German ambushes particularly dangerous.",
     type: "battle",
     image:
-      "https://images.unsplash.com/photo-1654424931721-01f8487cf5f1?auto=format&fit=crop&w=1600&q=85",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Bundesarchiv_Bild_101I-738-0276-25A%2C_Villers-Bocage%2C_zerst%C3%B6rter_Cromwell-Panzer.jpg",
   },
 
   {
@@ -75,7 +75,7 @@ export const normandyCampaign: CampaignTypes = {
       "After weeks of slow fighting, the Americans attempted to break out of the bocage near Saint-Lô. Operation Cobra began with a massive aerial bombardment intended to rupture German defensive positions. American infantry then pushed through the opening, allowing armoured and mechanized forces to exploit the breakthrough. The breakthrough transformed the campaign. American forces rapidly advanced toward Avranches, and the fighting began shifting from a confined battle around the Normandy beachhead into a war of movement across France.",
     type: "breakthrough",
     image:
-      "https://images.unsplash.com/photo-1654424931721-01f8487cf5f1?auto=format&fit=crop&w=1600&q=85",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Cobra_Coutances.jpg/1920px-Cobra_Coutances.jpg",
   },
 
   {
@@ -86,7 +86,7 @@ export const normandyCampaign: CampaignTypes = {
       "Following the Allied breakthrough, German forces became increasingly vulnerable to encirclement. American forces pushed from the south while British, Canadian and Polish forces advanced from the north, gradually closing around German formations near Falaise and Chambois. The pocket finally closed around 21 August. Large numbers of German troops were killed or captured and enormous quantities of vehicles and equipment were abandoned or destroyed. Some German forces nevertheless managed to escape through the narrowing gap.",
     type: "battle",
     image:
-      "https://images.unsplash.com/photo-1654424931721-01f8487cf5f1?auto=format&fit=crop&w=1600&q=85",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Chambois1.jpg/1920px-Chambois1.jpg",
   },
 
  {
