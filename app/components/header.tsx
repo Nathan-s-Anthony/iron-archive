@@ -15,12 +15,12 @@ export default function Header() {
     {
       id: 0,
       name: "Collections",
-      link: "/collections",
+      link: "/war-room/collections",
     },
     {
       id: 2,
       name: "Campaigns",
-      link: "/campaign",
+      link: "/war-room/campaign",
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`${scrolled ? "animate-header-hide" : "animate-header-reveal"} lg:block hidden transition-all duration-300 fixed z-40 border-b border-primary/30 top-0 left-0 right-0`}
+        className={`${scrolled ? "animate-header-hide" : "animate-header-reveal"} lg:block hidden transition-all duration-300 fixed z-40 border-b border-primary/30 top-0 left-0 lg:h-25 right-0`}
       >
         <nav className="container">
           <div className="flex items-center justify-between">

@@ -2,8 +2,8 @@
 
 export default function Footer() {
   return (
-    <footer className="border-t border-primary/30">
-      <div className="container mr-auto">
+    <footer className="border-t border-primary/30 ">
+      <div className="container">
         <div className="flex items-center justify-between p-8">
           <div>
             <h4 className="text-secondary  text-sm font-mono-alt  track-tight">

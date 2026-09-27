@@ -195,12 +195,17 @@ export default function PageContent() {
                     </span>
                   </div>
                   <div className=" campaign-image-veil image-veil-3 z-40 absolute inset-0" />
-                  <Image
-                    alt={campaign.name}
-                    fill
-                    className="mb-4 campaign-image object-cover  rounded-md "
-                    src={campaign.image}
-                  />
+                  <figure className="bg-red-500">
+                    <Image
+                      alt={campaign.name}
+                      fill
+                      className="mb-4 campaign-image object-cover  rounded-md "
+                      src={campaign.image}
+                    />
+                    <figcaption>
+                      Picture of the author, taken in 2026.
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
             );

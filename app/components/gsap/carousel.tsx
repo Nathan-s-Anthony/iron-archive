@@ -6,9 +6,30 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 
-import Button from "../button";
-
 const sections = [
+  {
+    name: "Tiger I",
+    designation: "Panzer VI · 1942",
+    faction: "Axis",
+    era: "1939—45",
+    type: "Heavy Tank",
+    detail: "Heavy tank · 88 mm KwK 36",
+    image:
+      "https://tankmuseum.org/wp-content/uploads/2020/04/Tiger-I-feat-1100x500.jpg",
+    imageAlt: "German heavy tank displayed in a museum",
+  },
+
+  {
+    name: "Panther",
+    designation: "Panzer V · 1943",
+    faction: "Axis",
+    era: "1939—45",
+    type: "Medium Tank",
+    detail: "Medium tank · 75 mm KwK 42",
+    image:
+      "https://tankmuseum.org/wp-content/uploads/2020/03/Panther-feat-1100x500.jpg",
+    imageAlt: "German Panther tank displayed outdoors",
+  },
   {
     name: "Supermarine Spitfire",
     designation: "Mk. IXc · 1942",
@@ -20,6 +41,7 @@ const sections = [
       "https://images.unsplash.com/photo-1693916064465-8036ac1a0756?auto=format&fit=crop&w=1400&q=85",
     imageAlt: "Historic aircraft displayed inside a museum",
   },
+
   {
     name: "M4 Sherman",
     designation: "M4A3 · 1942",
@@ -31,6 +53,7 @@ const sections = [
       "https://images.unsplash.com/photo-1779565292206-49a9b5716ad6?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Weathered military tank track and armour",
   },
+
   {
     name: "Panzerkampfwagen IV",
     designation: "Ausf. H · 1943",
@@ -42,19 +65,59 @@ const sections = [
       "https://images.unsplash.com/photo-1695120972968-21ffead317fb?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Armoured vehicle on outdoor display",
   },
+
+  // {
+  //   name: "Yakovlev Yak-3",
+  //   designation: "Series 2 · 1944",
+  //   faction: "Soviet",
+  //   era: "1939—45",
+  //   type: "Aircraft",
+  //   detail: "Low-altitude fighter · Klimov V-12",
+  //   image:
+  //     "https://images.unsplash.com/photo-1782034419865-535c50b9695a?auto=format&fit=crop&w=1200&q=85",
+  //   imageAlt: "Vintage fighter aircraft displayed in a hangar",
+  // },
+
+  // ─────────────────────────────
+  // HEAVY HITTERS
+  // ─────────────────────────────
+
   {
-    name: "Yakovlev Yak-3",
-    designation: "Series 2 · 1944",
+    name: "T-34",
+    designation: "T-34/85 · 1944",
     faction: "Soviet",
     era: "1939—45",
-    type: "Aircraft",
-    detail: "Low-altitude fighter · Klimov V-12",
+    type: "Medium Tank",
+    detail: "Medium tank · 85 mm ZiS-S-53",
     image:
-      "https://images.unsplash.com/photo-1782034419865-535c50b9695a?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Vintage jet aircraft displayed in a hangar",
+      "https://tankmuseum.org/wp-content/uploads/2020/11/T-34-76-Featured.jpg",
+    imageAlt: "Soviet T-34 tank",
+  },
+
+  {
+    name: "P-51 Mustang",
+    designation: "P-51D · 1944",
+    faction: "Allied",
+    era: "1939—45",
+    type: "Aircraft",
+    detail: "Long-range fighter · Merlin V-1650",
+    image:
+      "https://images.unsplash.com/photo-1751787159521-50b072be21d6?q=80&w=2064&auto=format&fit=crop",
+    imageAlt: "North American P-51 Mustang fighter aircraft",
+  },
+
+  {
+    name: "B-17 Flying Fortress",
+    designation: "B-17G · 1943",
+    faction: "Allied",
+    era: "1939—45",
+    type: "Heavy Bomber",
+    detail: "Heavy bomber · Four-engine radial",
+    image:
+      "https://images.unsplash.com/photo-1693161755505-0c98d4dffcba?q=80&w=1746&auto=format&fit=crop",
+    imageAlt: "Historic B-17 Flying Fortress bomber",
   },
 ];
-
 export default function GSAPCarousel() {
   const container = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLDivElement>(null);
@@ -94,6 +157,7 @@ export default function GSAPCarousel() {
           content.querySelector(".slide-title"),
           content.querySelector(".slide-designation"),
           content.querySelector(".slide-meta"),
+          content.querySelector(".slide-button"),
         ].filter(Boolean);
       };
 
@@ -347,6 +411,9 @@ export default function GSAPCarousel() {
                 </div>
               </div>
             </div>
+            <button className="slide-button absolute text-primary font-mono-alt border border-secondary z-50 right-10 bottom-10">
+              View {section.name}
+            </button>
           </div>
         ))}
       </div>

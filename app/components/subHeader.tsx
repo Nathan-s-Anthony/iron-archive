@@ -1,17 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import Button from "./button";
 
 export default function SubHeader() {
   return (
     <header className="fixed bg-background z-40 border-b border-primary/30 w-full ">
-      <div className="flex justify-between items-center p-3 w-full">
-        <div>
+      <div className="flex justify-between items-center w-full">
+        <div className="">
           {"<-"}
           <Link
             href="/"
-            className="font-mono text-xs uppercase tracking-[.22em] text-secondary"
+            className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
           >
             THE iron archive
           </Link>
@@ -20,13 +19,16 @@ export default function SubHeader() {
           DOSSIER WAR ROOM
         </div>
         <div className="text-end">
-          <Button
+          <button className=" font-mono-alt uppercase border-secondary border text-secondary">
+            Enter war room
+          </button>
+          {/* <Button
             value={"Enter War Room"}
             variant={"none"}
             className={
               "text-xs py-3 px-4 border border-secondary text-secondary"
             }
-          />
+          /> */}
         </div>
       </div>
     </header>

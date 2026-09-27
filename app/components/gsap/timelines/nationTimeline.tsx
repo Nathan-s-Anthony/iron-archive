@@ -2,6 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
+import { nations } from "@/app/data/timeline/campaigns/normandy/data";
 export default function NationTimeline() {
   const nationsContainer = useRef<HTMLDivElement>(null);
 
@@ -18,9 +19,9 @@ export default function NationTimeline() {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: nationsContainer,
-          markers: true,
           start: "top top",
-
+          pin: true,
+          anticipatePin: 1,
           // end: `+=${2500 + scrollDistance}`,
           end: `+=900`,
           toggleActions: "play none none reverse",
@@ -150,14 +151,13 @@ export default function NationTimeline() {
       <section ref={nationsContainer} className="h-400" id="nations">
         <div className="container">
           <div className="flex flex-col justify-end py-6 items-center">
-            <span className="text-primary/60 mb-0 mt-0">Introduction</span>
+            <span className="text-primary/60 mb-0 mt-0">Nations</span>
             <h1 className="text-primary text-center nation-heading">
-              Normandy Campaign
+              Major Nations
             </h1>
             <p className="max-w-xl mt-6 mb-6 text-center nation-subHeading">
-              A comprehensive field dossier covering the major campaigns and
-              theatres of the Second World War, from the opening offensives of
-              1939 to the final campaigns of 1945.
+              A comprehensive guide covering all the {"nations'"} strategies,
+              goals , struggles and wins
             </p>
           </div>
         </div>

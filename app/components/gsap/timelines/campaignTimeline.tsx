@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { normandyCampaign } from "@/app/data/timeline/campaigns/normandy/data";
 import Image from "next/image";
-import NationTimeline from "./nationTimeline";
 import { useRouter } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 export default function CampaginTimeline() {
@@ -33,29 +32,33 @@ export default function CampaginTimeline() {
       const objectivesDesc =
         objectivesContainer.querySelector<HTMLElement>(".objective-desc");
       const objectives = gsap.utils.toArray<HTMLElement>(".objectives");
-      const totalContentHeight = objectivesContainer.scrollHeight;
-
-      const letterHeight = window.innerHeight * 0.8;
-
-      const scrollDistance = totalContentHeight - letterHeight;
-      const contentHeight = objectivesContainer.scrollHeight;
 
       const introTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: introduction,
           start: "center center",
-          end: "+=800",
+          end: `+=${window.innerHeight}`,
+          markers: true,
           scrub: 1,
         },
       });
+      const currentHeight = letter.offsetHeight;
+      const contentHeight = letter.scrollHeight;
 
+      gsap.set(letter, {
+        height: "auto",
+      });
+
+      gsap.set(letter, {
+        height: currentHeight,
+      });
       introTimeline.fromTo(
         letter,
         {
           height: 200,
         },
         {
-          height: contentHeight + 380,
+          height: contentHeight,
           opacity: 1,
           duration: 1,
           ease: "power3.out",
