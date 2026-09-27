@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'tankmuseum.org',
+      },
+           {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
       
       }
      

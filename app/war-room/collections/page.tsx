@@ -1,24 +1,45 @@
+import { collections } from "@/app/data/data";
+import Image from "next/image";
+import Link from "next/link";
 export default function CollectionsPage() {
   return (
-    <div className="mt-25">
-      <div className="container relative ">
-        <div className="diary-paper  w-full h-250 archive-modal letter  border border-[#b59e76] p-7 text-[#34302a] shadow-[12px_14px_0_rgba(0,0,0,.18)] lg:p-10"></div>
-        <div className="flex absolute top-20  left-0 right-0 mx-auto  justify-between ">
-          <blockquote className="w-full mt-12 text-center font-sans text-3xl leading-[1.25]">
-            ARCHIVE SEARCH
-          </blockquote>
-          {/* <p className="font-mono text-nowrap text-xs uppercase tracking-[.13em] text-[#8c3c32]">
-            48°N · 20°W
-          </p> */}
-          {/* <p className="mt-1 font-display text-xl italic">SECURE NORMANDY</p> */}
-        </div>
-        <div className=" absolute top-20 left-0 w-full flex justify-around">
-          <span className="border -rotate-4 w-fit h-fit border-[#8c3c32]/50 px-2 py-1 font-mono text-xs uppercase tracking-[.12em] text-[#8c3c32]">
-            ARCHIVE SEARCH
-          </span>
-          <span className="border w-fit rotate-4 h-fit border-[#8c3c32]/50 px-2 py-1 font-mono text-xs uppercase tracking-[.12em] text-[#8c3c32]">
-            CONFIDENTIAL
-          </span>
+    <div className="">
+      <div className="container relative">
+        <div className="">
+          <div className=" grid max-w-7xl mx-auto grid-cols-2 gap-4 ">
+            {collections.catalogFeatured.map((featured, id) => {
+              const catType = featured.type.toLowerCase();
+              return (
+                <div
+                  className="group w-full cursor-pointer"
+                  key={`${featured.type}-${id}`}
+                >
+                  <Link href={`/war-room/collections/${catType}`}>
+                    <div className="w-full">
+                      <div className="diary-paper p-4 w-full h-150  relative archive-modal letter  border border-[#b59e76]  text-[#34302a] shadow-[12px_14px_0_rgba(0,0,0,.18)] ">
+                        <h2 className="text-foreground flex justify-center w-full  text-shadow-2xl text-3xl absolute bottom-8">
+                          <span className="font-mono-alt relative">
+                            {featured.type}
+                          </span>
+                          <div
+                            className={`group-hover:block transition-all duration-300 hidden w-50 -rotate-3 h-1 bg-background -bottom-1 absolute`}
+                          ></div>
+                        </h2>
+                        <div className="h-120 w-full relative overflow-hidden">
+                          <Image
+                            className="object-cover group-hover:scale-125 duration-300 transition-all"
+                            src={featured.image}
+                            alt={featured.imageAlt}
+                            fill
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -7,13 +7,14 @@ import SideNav from "./sideNav";
 import { useModal } from "../providers/modelProvider";
 import Modal from "./modal/modal";
 import { navList } from "../data/data";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [scrolledSideNav, setScrolledSideNav] = useState(false);
   const { modal, openModal, closeModal } = useModal();
   const pathName = usePathname();
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY >= 200);
@@ -33,22 +34,69 @@ export default function Header() {
   return (
     <>
       <header
-        className={`${scrolled ? "animate-header-hide" : "animate-header-reveal"} lg:block hidden transition-all duration-300 fixed z-40 border-b border-primary/30 top-0 left-0 lg:h-25 right-0`}
+        className={`${scrolled ? "animate-header-hide" : "animate-header-reveal"} ${pathName === "/" ? "lg:h-25" : "lg:h-18 bg-background"} lg:block hidden transition-all duration-300 fixed z-100 border-b border-primary/30 top-0 left-0  right-0`}
       >
         <nav className="container">
           <div className="flex items-center justify-between">
-            <div className="flex gap-4">
-              {pathName !== "/" && <div className="bg-red-500">test</div>}
-              <Link
-                href="/"
-                className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
-              >
-                THE iron archive
-              </Link>
+            <div className="flex gap-2 group  items-center cursor-pointer">
+              {pathName !== "/" && (
+                <div className="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-5 group-hover:-translate-x-2 transition-all duration-300 text-secondary"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 19.5 8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </div>
+              )}
+              <div className="gap-2 flex flex-col">
+                {pathName === "/" ? (
+                  <Link
+                    href="/"
+                    className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
+                  >
+                    THE iron archive
+                  </Link>
+                ) : (
+                  <span
+                    onClick={() => router.back()}
+                    className="uppercase text-secondary  text-shadow-xl  font-mono-alt  tracking-tight"
+                  >
+                    The iron archive
+                  </span>
+                )}
+                {pathName === "/" && (
+                  <div className="flex items-center gap-2">
+                    <span className="uppercase text-secondary  text-shadow-xl  font-mono-alt  text-xs tracking-tight">
+                      Iron Era
+                    </span>
+                    <span className=" uppercase text-foreground  text-shadow-xl  font-mono text-xs tracking-widest rounded-md px-2 py-1  bg-secondary  ">
+                      WW2
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
+
             {pathName !== "/" && (
               <div>
-                <h4 className="uppercase font-mono-alt text-sm">
+                <h4 className="uppercase  text-shadow-xl font-mono leading-tight text-sm">
+                  WAR ROOM
+                </h4>
+              </div>
+            )}
+            {pathName !== "/" && (
+              <div>
+                <h4 className="uppercase text-secondary   font-mono-alt text-shadow-xl leading-tight text-xs">
+                  {"/"}
                   {pathName.split("/")[2]} ROOM
                 </h4>
               </div>
@@ -80,7 +128,7 @@ export default function Header() {
               </ul>
             )}
 
-            {pathName !== "/war-room/collections" && (
+            {pathName === "/" && (
               <button
                 onClick={() => openModal("archive")}
                 className="text-primary border shadow-xl uppercase border-primary/80  text-shadow-xl  font-mono-alt tracking-widest"

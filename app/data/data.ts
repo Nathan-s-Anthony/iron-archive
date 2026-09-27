@@ -136,7 +136,494 @@ import { Collections } from "../types/collections";
 
  export const collections: Collections = {
   name: "collections",
-  catalog: [],
+  catalogFeatured:[
+     {
+      type: "Aircraft",
+      image:
+        "https://images.unsplash.com/photo-1561323578-dde5e688b4b7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0",
+      imageAlt: "Historic aircraft displayed inside a museum",
+    },
+
+    {
+      type: "Armoured",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/f/f6/A_British_Sherman_tank_advancing_near_Catania%2C_Sicily%2C_4_August_1943._NA5522.jpg",
+      imageAlt: "Weathered military tank track and armour",
+
+    },
+
+  ],
+ catalog: [
+    // ─────────────────────────────
+    // UNITED STATES
+    // ─────────────────────────────
+
+    {
+      name: "M4 Sherman",
+      designation: "M4A3 · 1942",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "Medium tank · 75 mm M3 gun",
+
+      front: [
+        "North Africa",
+        "Italy",
+        "Normandy",
+        "Western Front",
+        "Pacific"
+      ],
+
+      manufactured: 50000,
+      armament: "75 mm M3 · .50 cal M2 · 2× .30 cal",
+      crew: 5,
+      weight: "30–38 tonnes",
+      topSpeed: "38 km/h",
+      summary:
+        "The M4 Sherman became the principal American medium tank of the war. It served across almost every major Allied front and was supplied extensively to Britain, the Soviet Union and other Allied forces.",
+    },
+    {
+      name: "M3 Stuart",
+      designation: "M3 · 1941",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Light Tank",
+      detail: "Reconnaissance tank · 37 mm gun",
+
+      front: [
+        "North Africa",
+        "Burma",
+        "Italy",
+        "Pacific",
+        "Eastern Front"
+      ],
+
+      manufactured: 13859,
+      armament: "37 mm M6 · 3× .30 cal machine guns",
+      crew: 4,
+      weight: "12.9 tonnes",
+      topSpeed: "58 km/h",
+
+      summary:
+        "The M3 Stuart was a fast and reliable light tank used extensively for reconnaissance and exploitation. Thousands were also supplied to Allied partners through Lend-Lease.",
+    },
+
+    {
+      name: "M26 Pershing",
+      designation: "M26 · 1945",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Heavy / Medium Tank",
+      detail: "90 mm gun · Heavy breakthrough tank",
+
+      front: [
+        "Western Front"
+      ],
+
+      manufactured: 2202,
+      armament: "90 mm M3 · .50 cal M2 · 2× .30 cal",
+      crew: 5,
+      weight: "41.7 tonnes",
+      topSpeed: "40 km/h",
+
+      summary:
+        "The M26 Pershing was introduced late in the European war to provide American armoured units with a tank capable of confronting heavily armoured German vehicles.",
+    },
+
+    // ─────────────────────────────
+    // BRITAIN / COMMONWEALTH
+    // ─────────────────────────────
+
+    {
+      name: "Churchill",
+      designation: "A22 · 1941",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Infantry Tank",
+      detail: "Heavy infantry tank · 6-pounder",
+
+      front: [
+        "North Africa",
+        "Italy",
+        "Normandy",
+        "Western Front",
+        "Eastern Front"
+      ],
+
+      manufactured: 5640,
+      armament: "6-pounder · 2× 7.92 mm BESA",
+      crew: 5,
+      weight: "39 tonnes",
+      topSpeed: "25 km/h",
+
+      summary:
+        "The Churchill was heavily armoured and exceptionally capable over difficult terrain. Specialized versions were adapted for engineering, bridge-laying and flamethrowing duties.",
+    },
+
+    {
+      name: "Cromwell",
+      designation: "Cruiser Mk VIII · 1943",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Cruiser Tank",
+      detail: "Fast cruiser tank · 75 mm gun",
+
+      front: [
+        "Normandy",
+        "Western Front",
+        "Italy"
+      ],
+
+      manufactured: 4016,
+      armament: "75 mm gun · 2× 7.92 mm BESA",
+      crew: 5,
+      weight: "27.6 tonnes",
+      topSpeed: "64 km/h",
+
+      summary:
+        "The Cromwell was one of Britain's principal cruiser tanks in Normandy. Its high speed and mobility made it particularly useful for exploitation and reconnaissance.",
+    },
+
+    {
+      name: "Matilda II",
+      designation: "A12 · 1939",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Infantry Tank",
+      detail: "Heavy armour · 2-pounder",
+
+      front: [
+        "France",
+        "North Africa",
+        "Pacific",
+        "Eastern Front"
+      ],
+
+      manufactured: 2987,
+      armament: "2-pounder · 7.92 mm BESA",
+      crew: 4,
+      weight: "26.9 tonnes",
+      topSpeed: "24 km/h",
+
+      summary:
+        "The Matilda II gained a reputation for its exceptionally thick armour early in the war. It saw extensive service in North Africa and was also supplied to the Soviet Union.",
+    },
+
+    // ─────────────────────────────
+    // SOVIET UNION
+    // ─────────────────────────────
+
+    {
+      name: "T-34/76",
+      designation: "Model 1943 · 1943",
+      faction: "Soviet",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "76.2 mm gun · Sloped armour",
+
+      front: [
+        "Eastern Front"
+      ],
+
+      manufactured: 35467,
+      armament: "76.2 mm F-34 · 2× 7.62 mm DT",
+      crew: 4,
+      weight: "26.5 tonnes",
+      topSpeed: "53 km/h",
+
+      summary:
+        "The T-34 combined sloped armour, mobility and firepower in a design that could be produced in enormous numbers. It formed the backbone of Soviet armoured forces during the first half of the war.",
+    },
+
+    {
+      name: "T-34/85",
+      designation: "Model 1944 · 1944",
+      faction: "Soviet",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "85 mm gun · Five-man crew",
+
+      front: [
+        "Eastern Front",
+        "Poland",
+        "Germany"
+      ],
+
+      manufactured: 50000,
+      armament: "85 mm ZiS-S-53 · 2× 7.62 mm DT",
+      crew: 5,
+      weight: "32 tonnes",
+      topSpeed: "55 km/h",
+
+      summary:
+        "The T-34/85 upgraded the original T-34 with a larger turret, a more powerful 85 mm gun and improved crew arrangements. It spearheaded Soviet armoured advances into Eastern Europe and Germany.",
+    },
+
+    {
+      name: "KV-1",
+      designation: "Kliment Voroshilov · 1939",
+      faction: "Soviet",
+      era: "1939—45",
+      type: "Heavy Tank",
+      detail: "Heavy armour · 76.2 mm gun",
+
+      front: [
+        "Eastern Front",
+        "Leningrad",
+        "Moscow",
+        "Stalingrad"
+      ],
+
+      manufactured: 4790,
+      armament: "76.2 mm F-34 · 3× 7.62 mm DT",
+      crew: 5,
+      weight: "45 tonnes",
+      topSpeed: "35 km/h",
+
+      summary:
+        "The KV-1 was among the heaviest Soviet tanks when Germany invaded in 1941. Its armour could initially resist many German anti-tank weapons, although its mobility and turret layout limited its effectiveness as the war progressed.",
+    },
+
+    // ─────────────────────────────
+    // GERMANY
+    // ─────────────────────────────
+
+    {
+      name: "Panzerkampfwagen IV",
+      designation: "Ausf. H · 1943",
+      faction: "Axis",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "75 mm KwK 40 · Main German medium tank",
+
+      front: [
+        "Poland",
+        "France",
+        "North Africa",
+        "Eastern Front",
+        "Italy",
+        "Normandy"
+      ],
+
+      manufactured: 13522,
+      armament: "75 mm KwK 40 L/48 · 2× MG34",
+      crew: 5,
+      weight: "25 tonnes",
+      topSpeed: "38 km/h",
+
+      summary:
+        "The Panzer IV became the mainstay of German armoured formations. Continuous upgrades kept the design in frontline service from the opening campaigns through the final battles of 1945.",
+    },
+
+    {
+      name: "Panther",
+      designation: "Panzer V · 1943",
+      faction: "Axis",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "75 mm KwK 42 · Sloped armour",
+
+      front: [
+        "Eastern Front",
+        "Italy",
+        "Normandy",
+        "Western Front"
+      ],
+
+      manufactured: 3694,
+      armament: "75 mm KwK 42 L/70 · 2× MG34",
+      crew: 5,
+      weight: "44 tonnes",
+      topSpeed: "55 km/h",
+
+      summary:
+        "Developed partly in response to the T-34, the Panther combined powerful firepower with heavily sloped frontal armour. It first saw major combat at Kursk in 1943.",
+    },
+
+    {
+      name: "Tiger I",
+      designation: "Panzer VI · 1942",
+      faction: "Axis",
+      era: "1939—45",
+      type: "Heavy Tank",
+      detail: "88 mm KwK 36 · Heavy armour",
+
+      front: [
+        "Leningrad",
+        "North Africa",
+        "Eastern Front",
+        "Normandy",
+        "Western Front"
+      ],
+
+      manufactured: 1347,
+      armament: "88 mm KwK 36 L/56 · 2× MG34",
+      crew: 5,
+      weight: "56 tonnes",
+      topSpeed: "38 km/h",
+
+      summary:
+        "The Tiger I combined thick armour with the powerful 88 mm gun. It was deployed in small numbers compared with German medium tanks and became one of the most recognizable armoured vehicles of the war.",
+    },
+
+    {
+      name: "Tiger II",
+      designation: "Panzer VI Ausf. B · 1944",
+      faction: "Axis",
+      era: "1939—45",
+      type: "Heavy Tank",
+      detail: "88 mm KwK 43 · 69.8 tonnes",
+
+      front: [
+        "Eastern Front",
+        "Normandy",
+        "Western Front"
+      ],
+
+      manufactured: 489,
+      armament: "88 mm KwK 43 L/71 · 2× MG34",
+      crew: 5,
+      weight: "69.8 tonnes",
+      topSpeed: "41 km/h",
+
+      summary:
+        "The Tiger II was Germany's most heavily protected operational tank. Its long 88 mm gun gave it formidable anti-armour capability, although its enormous weight and mechanical complexity limited its practicality.",
+    },
+
+    // ─────────────────────────────
+    // JAPAN
+    // ─────────────────────────────
+
+    {
+      name: "Type 95 Ha-Go",
+      designation: "Type 95 · 1935",
+      faction: "Japan",
+      era: "1939—45",
+      type: "Light Tank",
+      detail: "37 mm gun · Japanese mainstay",
+
+      front: [
+        "China",
+        "Burma",
+        "Malaya",
+        "Philippines",
+        "Pacific"
+      ],
+
+      manufactured: 2300,
+      armament: "37 mm Type 94 · 2× 7.7 mm Type 97",
+      crew: 3,
+      weight: "7.4 tonnes",
+      topSpeed: "45 km/h",
+
+      summary:
+        "The Ha-Go was Japan's most numerous tank of the war. It remained in frontline service throughout the conflict, fighting from China and Southeast Asia to the Pacific islands.",
+    },
+
+    {
+      name: "Type 97 Chi-Ha",
+      designation: "Type 97 · 1937",
+      faction: "Japan",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "57 mm gun · Main Japanese medium tank",
+
+      front: [
+        "China",
+        "Burma",
+        "Malaya",
+        "Philippines",
+        "Pacific"
+      ],
+
+      manufactured: 2092,
+      armament: "57 mm Type 97 or 47 mm Type 1 · MGs",
+      crew: 4,
+      weight: "15 tonnes",
+      topSpeed: "38 km/h",
+
+      summary:
+        "The Chi-Ha was Japan's principal medium tank during the early and middle years of the war. Later Shinhoto variants received a more capable 47 mm gun to improve their anti-tank performance.",
+    },
+
+    {
+      name: "Type 2 Ka-Mi",
+      designation: "Type 2 · 1942",
+      faction: "Japan",
+      era: "1939—45",
+      type: "Amphibious Tank",
+      detail: "Amphibious · 37 mm gun",
+
+      front: [
+        "Pacific",
+        "Solomon Islands",
+        "Mariana Islands",
+        "Marshall Islands"
+      ],
+
+      manufactured: 184,
+      armament: "37 mm Type 1 · 2× 7.7 mm Type 97",
+      crew: 5,
+      weight: "12 tonnes",
+      topSpeed: "37 km/h",
+
+      summary:
+        "The Ka-Mi was designed for amphibious operations and could swim using detachable flotation equipment. It was employed by Japanese naval landing forces during Pacific island campaigns.",
+    },
+
+    // ─────────────────────────────
+    // OTHER ALLIED VEHICLES
+    // ─────────────────────────────
+
+    {
+      name: "M3 Lee",
+      designation: "M3 Medium · 1941",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Medium Tank",
+      detail: "75 mm hull gun · 37 mm turret",
+
+      front: [
+        "North Africa",
+        "Burma",
+        "Eastern Front"
+      ],
+
+      manufactured: 6258,
+      armament: "75 mm M2/M3 · 37 mm M5 · MGs",
+      crew: 6,
+      weight: "27.2 tonnes",
+      topSpeed: "42 km/h",
+
+      summary:
+        "The M3 Lee was an interim American medium tank whose unusual two-gun arrangement reflected the need for a powerful 75 mm weapon before the Sherman entered widespread service.",
+    },
+
+    {
+      name: "M3 Half-track",
+      designation: "M3 · 1941",
+      faction: "Allied",
+      era: "1939—45",
+      type: "Armoured Personnel Carrier",
+      detail: "Half-track · Infantry transport",
+
+      front: [
+        "North Africa",
+        "Italy",
+        "Normandy",
+        "Western Front",
+        "Pacific"
+      ],
+
+      manufactured: 41000,
+      armament: ".50 cal M2 · optional .30 cal MG",
+      crew: 3,
+      weight: "9 tonnes",
+      topSpeed: "72 km/h",
+      summary:
+        "The M3 half-track provided mechanized infantry with protected mobility and became one of the defining Allied transport vehicles of the war.",
+    },
+  ],
   carousel: [
     {
       name: "Supermarine Spitfire",

@@ -296,10 +296,10 @@ export default function TimelinePage() {
                         alt={timeline.title}
                         fill
                       />
-                      <figcaption className="z-60  text-sm absolute -bottom-8  w-full">
+                      <figcaption className="z-60 text-shadow-2xl text-sm absolute -bottom-8  w-full">
                         <span>Source:</span>
                         <a
-                          className=" text-sm text-[#8c3c32]"
+                          className="text-shadow-2xl text-sm text-[#8c3c32]"
                           href="https://broaden-horizons.fr"
                         >
                           Broaden Horizons
@@ -308,10 +308,10 @@ export default function TimelinePage() {
                     </figure>
                   </div>
                   <div className="max-w-2xl col-start-2 flex flex-col gap-4 ">
-                    <h2 className="text-foreground objective-title">
+                    <h2 className="text-foreground text-shadow-2xl objective-title">
                       {timeline.title}
                     </h2>
-                    <p className="text-foreground objective-desc">
+                    <p className="text-foreground text-shadow-2xl objective-desc">
                       {" "}
                       {timeline.description}
                     </p>
@@ -326,8 +326,10 @@ export default function TimelinePage() {
         <div className="container">
           <div className="flex flex-col justify-end py-6 items-center">
             <span className="text-primary/60 mb-0 mt-0">Nations</span>
-            <h1 className="text-primary text-center">Major Nations</h1>
-            <p className="max-w-xl mt-6 mb-6 text-center">
+            <h1 className="text-primary text-center text-shadow-2xl">
+              Major Nations
+            </h1>
+            <p className="max-w-xl mt-6 mb-6 text-center text-shadow-2xl">
               A comprehensive field dossier covering the major campaigns and
               theatres of the Second World War, from the opening offensives of
               1939 to the final campaigns of 1945.
@@ -351,10 +353,10 @@ export default function TimelinePage() {
                     src={`${nation.image}${nation.id}.jpg`}
                   />
                   <div className="absolute  z-80 inset-0 flex items-center justify-center gap-4 flex-col">
-                    <h2 className="nation-title text-primary  font-mono-alt text-7xl">
+                    <h2 className="nation-title text-primary text-shadow-2xl  font-mono-alt text-7xl">
                       {nation.name}
                     </h2>
-                    <p className="max-w-2xl nation-desc text-primary/80 text-xl">
+                    <p className="max-w-2xl nation-desc text-shadow-2xl text-primary/80 text-xl">
                       {nation.description}
                     </p>
                   </div>

@@ -2,8 +2,10 @@ import BattleViewer from "@/app/components/battleViewer";
 
 export default function BattleForgePage() {
   return (
-    <div className="min-h-300 bg-red-500">
-      <BattleViewer />
+    <div className="h-250">
+      <div className="container">
+        <BattleViewer />
+      </div>
     </div>
   );
 }

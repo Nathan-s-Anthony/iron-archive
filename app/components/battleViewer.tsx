@@ -1,5 +1,6 @@
 "use client";
-import { BattleMap } from "battleforge";
+import { BattleMap } from "battle-timeline-simulator";
+
 export default function BattleViewer() {
   return (
     <BattleMap

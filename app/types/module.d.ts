@@ -1,1 +1,1 @@
-declare module 'battleforge'
+declare module 'battle-timeline-simulator'
