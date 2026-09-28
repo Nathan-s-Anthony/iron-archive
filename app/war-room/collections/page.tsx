@@ -6,7 +6,7 @@ export default function CollectionsPage() {
     <div className="">
       <div className="container relative">
         <div className="">
-          <div className=" grid max-w-7xl mx-auto grid-cols-2 gap-4 ">
+          <div className="  grid max-w-7xl mx-auto lg:grid-cols-2 gap-4 ">
             {collections.catalogFeatured.map((featured, id) => {
               const catType = featured.type.toLowerCase();
               return (

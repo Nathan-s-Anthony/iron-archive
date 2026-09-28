@@ -159,6 +159,7 @@ import { Collections } from "../types/collections";
     // ─────────────────────────────
 
     {
+      
       name: "M4 Sherman",
       designation: "M4A3 · 1942",
       faction: "Allied",
