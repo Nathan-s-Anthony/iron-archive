@@ -8,7 +8,7 @@ import { Collections } from "../types/collections";
     {
       id: 1,
       name: "Historical Battle Timeline",
-      link: "/war-room/battle-forge",
+      link: "/war-room/battle-timeline-simulator",
     },
   ];
   export const campaigns = [
